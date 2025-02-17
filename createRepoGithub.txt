@@ -1,0 +1,22 @@
+Documentación: Creación de un Repositorio en GitHub para un Portafolio de AWS
+
+1. Iniciar Sesión en GitHub
+Accedí a mi cuenta de GitHub en https://github.com
+
+2.Crear un Nuevo Repositorio
+En la esquina superior derecha, hice clic en el ícono "+" y seleccioné "New repository".
+
+Completé los campos:
+
+Repository name: AWS.
+
+Elegí la visibilidad: Público (cualquiera puede verlo).
+
+Marqué la opción "Add a README file" para crear automáticamente un archivo README.md.
+
+
+Opcional: Seleccioné una licencia MIT License.
+
+Hice clic en "Create repository".
+
+
