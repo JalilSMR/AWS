@@ -1,0 +1,24 @@
+Day 1: Setting up Your Linux Environment
+
+1. Choose a Distribution: Select a Linux distribution for your virtual machine (VM). Ubuntu or CentOS are recommended for AWS familiarity.
+2. Virtual Machine Setup:
+     Download and install a virtualization platform (VirtualBox or VMware).
+        I´m going to use the Virtual box tool
+     Download the ISO image of your chosen Linux distribution.
+        For the linux distribution I´m going to use Ubuntu
+     Create a new VM. Allocate sufficient resources (at least 2 CPUs, 4GB RAM, 20GB disk space).
+     Install the Linux distribution on the VM.
+3. Basic Linux Commands:
+     Practice navigating the file system (cd, ls, pwd).
+          In order to get to an specific file we neet to type in the CLI "cd <path>"
+     Learn file manipulation commands (touch, cp, mv, rm, mkdir, rmdir).
+     Explore basic system information commands (uname, hostname, uptime).
+4. Resources:
+     LinuxCommand.org: Excellent resource for learning Linux commands.
+     OverTheWire Wargames: Fun way to learn Linux security concepts.
+
+
+Links
+https://www.virtualbox.org/ (Download VIrtualBox)
+https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview (Ubuntu image)
+https://www.pluralsight.com/resources/blog/guides/beginner-linux-navigation-manual (Navigation manual)
