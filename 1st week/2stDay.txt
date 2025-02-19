@@ -1,0 +1,18 @@
+Day 2: Linux User and Permission Management
+
+1. User Management:
+     Learn to create, modify, and delete users (useradd, usermod, userdel).
+     Understand user groups (groupadd, groupmod, groupdel).
+     Practice switching between users (su, sudo).
+2. Permissions:
+     Understand file permissions (read, write, execute).
+     Learn to change file permissions (chmod).
+     Explore special permissions (SUID, SGID, sticky bit).
+3. Hands-on:
+     Create multiple users and groups.
+     Assign different permissions to files and directories.
+     Practice using sudo for administrative tasks.
+4. Resources:
+     Linux man pages (e.g., `man chmod`).
+
+https://linux.die.net/man/ (Check commands)
