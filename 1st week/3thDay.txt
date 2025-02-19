@@ -1,0 +1,23 @@
+Day 3: Package Management and System Updates
+
+Package Managers:
+
+apt: Advanced Package Tool (for Ubuntu)
+sudo apt update: Update the package list
+sudo apt upgrade: Upgrade installed packages
+sudo apt install packagename: Install a package
+sudo apt remove packagename: Remove a package
+sudo apt search packagename: Search for a package
+apt show packagename: Show information about a package
+System Updates:
+
+Keep your system updated to ensure security and stability.
+Regularly run sudo apt update and sudo apt upgrade.
+Hands-on:
+
+Install the nginx web server using sudo apt install nginx.
+Update the system using sudo apt update and sudo apt upgrade.
+Proof: Take screenshots of the terminal showing the installation and update process.
+Resources:
+
+Ubuntu Server Guide
