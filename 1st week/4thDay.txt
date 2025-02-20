@@ -1,0 +1,22 @@
+Day 4: Networking Basics on Linux
+
+Network Configuration:
+
+Understand static and dynamic IP address configuration.
+Explore the /etc/netplan directory for network configuration files (on Ubuntu).
+Modify a network configuration file (e.g., sudo nano /etc/netplan/01-network-manager-all.yaml) to set a static IP address. Apply the changes with sudo netplan apply.
+Network Tools:
+
+ping: Test network connectivity (e.g., ping google.com)
+traceroute: Trace the route to a host (e.g., traceroute google.com)
+ip a: Display network interface information
+ss: Display socket statistics (a modern replacement for netstat)
+Hands-on:
+
+Configure a static IP address for your VM.
+Use ping and traceroute to test network connectivity to different hosts.
+Use ip a to view your network interface configuration.
+Proof: Take screenshots of the terminal output for each command.
+Resources:
+
+Linux networking tutorials online
