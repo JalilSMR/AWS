@@ -1,0 +1,32 @@
+Day 4: Networking Basics on Linux
+
+1. Network Configuration
+
+Dynamic IP: Assigned by a DHCP server (default in most Ubuntu installations).
+Static IP: Manually configured and remains fixed.
+
+Network Interfaces
+You can check your interfaces with: ip addr show
+
+Configuring Static IP on Ubuntu
+1-ls /etc/netplan/
+2-sudo nano /etc/netplan/01-netcfg.yaml
+3-Add static IP configuration
+4-sudo netplan apply
+
+2. Network Tools
+
+ping google.com
+traceroute google.com
+sudo netstat -tuln
+ip addr show
+sudo ifconfig
+
+3. Hands-on Practice
+
+Set a static IP.
+Set a dynamic IP.
+Test Network Connectivity
+
+4. Resources
+Ubuntu Netplan Documentation (https://netplan.io/)
