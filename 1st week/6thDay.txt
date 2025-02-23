@@ -1,0 +1,15 @@
+Day 6: AWS Identity and Access Management (IAM) Basics
+
+IAM Concepts:
+
+Understand IAM users, groups, roles, and policies.
+Learn the principle of least privilege (granting only necessary permissions).
+Hands-on:
+
+Create an IAM user with a specific name (e.g., "MyIAMUser").
+Assign the user to a group (e.g., "ReadOnlyAccess").
+Attach a policy to the group that grants read-only access to S3.
+Proof: Take screenshots of the IAM user, group, and policy configuration in the AWS Management Console.
+Resources:
+
+AWS IAM Documentation

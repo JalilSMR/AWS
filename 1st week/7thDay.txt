@@ -1,0 +1,7 @@
+Day 7: Review and Practice
+
+Review: Go over all the topics and commands covered during the week.
+Practice: Continue practicing Linux commands and AWS console navigation.
+Troubleshooting: Try to intentionally misconfigure something (e.g., network settings) and then use the learned commands and tools to troubleshoot and fix the issue.
+Mini-Project: Set up a simple website on your Linux VM using the nginx web server. Create a basic HTML page and configure nginx to serve it. This will give you a hands-on experience with web server configuration and Linux administration.
+Proof: Take a screenshot of your website running on your Linux VM, accessed from your host machine's web browser.
