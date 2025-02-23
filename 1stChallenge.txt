@@ -1,0 +1,70 @@
+Linux Challenges
+
+Broken Permissions:
+
+Intentionally mess up the permissions of your home directory so that you can't access it.
+Use the sudo command and chmod to fix the permissions and regain access.
+Proof: Take screenshots of the error message when you can't access the directory, the commands you used to fix it, and the successful access after fixing.
+Hidden Treasure:
+
+Create a hidden directory within your home directory (starts with a dot, e.g., .hidden).
+Place a text file inside with a secret message.
+Use the ls -a command to find the hidden directory and cat to display the message.
+Proof: Take a screenshot of the terminal output showing the hidden directory and the secret message.
+Process Explorer:
+
+Run a few applications in the background (e.g., firefox &, gedit &).
+Use the ps aux command to list all running processes.
+Identify the processes you started and their process IDs (PIDs).
+Use the kill command to terminate one of the background processes using its PID.
+Proof: Take screenshots of the ps aux output showing the running processes and the kill command used to terminate one.
+Remote Connection:
+
+Enable SSH on your Linux VM (if not already enabled).
+From your host machine, use an SSH client (like PuTTY on Windows) to connect to your Linux VM.
+Execute a few commands remotely on your VM through the SSH connection.
+Proof: Take a screenshot of the SSH client window showing the successful connection and the commands executed remotely.
+Service Manipulation:
+
+Choose a service running on your VM (e.g., nginx).
+Use systemctl to stop, start, and restart the service.
+Check the status of the service after each action.
+Proof: Take screenshots of the systemctl commands and their output showing the service status changes.
+AWS Challenges
+
+IAM Lockdown:
+
+Create a new IAM user with no permissions.
+Try to access S3 with this user. You should get an "Access Denied" error.
+Attach a policy to the user that grants read-only access to a specific S3 bucket.
+Verify that the user can now list the contents of that bucket but can't upload or delete objects.
+Proof: Take screenshots of the IAM user configuration, the "Access Denied" error, the attached policy, and the successful listing of the bucket contents.
+Security Group Puzzle:
+
+Launch an EC2 instance with a security group that only allows SSH access from your IP address.
+Try to access the instance through HTTP (port 80). It should be blocked.
+Modify the security group to allow HTTP access from anywhere (0.0.0.0/0).
+Verify that you can now access a simple web page served by the instance.
+Proof: Take screenshots of the initial security group configuration, the failed HTTP access attempt, the modified security group, and the successful access to the web page.
+CloudTrail Detective:
+
+Enable AWS CloudTrail in your account.
+Perform a few actions in the AWS Management Console (e.g., create an S3 bucket, launch an EC2 instance).
+Go to the CloudTrail console and view the event history.
+Identify the events corresponding to the actions you performed.
+Proof: Take screenshots of the CloudTrail console showing the event history with the events you performed.
+Mini-Project: Dynamic DNS
+
+This project combines your Linux and AWS skills:
+
+Install a dynamic DNS client on your Linux VM (e.g., ddclient).
+Configure it to update a DNS record in Route 53 with your VM's public IP address whenever it changes.
+Create a hosted zone in Route 53 for a domain name you own or a subdomain (e.g., myvm.example.com).
+Create an A record in the hosted zone and point it to your VM's current public IP address.
+Test by changing your VM's IP address (e.g., by restarting your router) and verify that the DNS record in Route 53 gets updated automatically.
+Proof:
+
+Screenshots of the ddclient configuration on your VM.
+Screenshots of the Route 53 hosted zone and DNS record.
+A screenshot of a dig or nslookup command showing the updated IP address for your domain/subdomain after changing your VM's IP.
+This mini-project will give you a taste of how to manage dynamic DNS and integrate your Linux skills with AWS services. It's a challenging but rewarding exercise that will solidify your understanding of both environments. Remember to document your steps and take screenshots as you progress. Good luck!
