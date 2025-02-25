@@ -1,0 +1,15 @@
+Day 8: Linux Networking Deep Dive
+
+1. TCP/IP Stack:
+    * Understand the layers of the TCP/IP model (Application, Transport, Network, Link).
+    * Learn about IP addresses, subnetting, and CIDR notation.
+    * Explore routing tables and how they work.
+2. Network Tools:
+    * Practice using `tcpdump` to capture and analyze network traffic.
+    * Learn to use `Wireshark` for more advanced network analysis.
+3. Hands-on:
+    * Capture and analyze network traffic on your VM using `tcpdump` and `Wireshark`.
+    * Experiment with different network configurations on your VM.
+4. Resources:
+    * TCP/IP Guide: Comprehensive resource on TCP/IP networking.
+    * Wireshark User's Guide.
