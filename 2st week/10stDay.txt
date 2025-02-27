@@ -1,0 +1,15 @@
+Day 10: Introduction to AWS EC2
+
+1. EC2 Concepts:
+Understand what Amazon EC2 is and its use cases.
+Learn about different EC2 instance types and their characteristics.
+Explore Amazon Machine Images (AMIs).
+
+2. Hands-on:
+Launch an EC2 instance using the AWS Management Console.
+Connect to the instance using SSH.
+Explore the instance's operating system and configuration.
+
+3. Resources:
+AWS EC2 Official Documentation: https://docs.aws.amazon.com/ec2/
+AWS EC2 FAQs: https://aws.amazon.com/ec2/faqs/
