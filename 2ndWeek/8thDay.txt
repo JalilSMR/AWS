@@ -1,0 +1,47 @@
+Day 8: Linux Networking Deep Dive
+
+TCP/IP Stack:
+
+Understand the four layers of the TCP/IP model and their functions:
+Application Layer: Provides network services to applications (e.g., HTTP, FTP, SMTP).
+    Is the top layer of information. It is how a user aplication, such a website, browser,email interact with the network\=
+    It facilitates networking request, determine resource availabiity, synchronizes communication
+    and manages application networking requierements.
+Transport Layer: Ensures reliable data delivery between applications (e.g., TCP, UDP).
+    This layer deals with sending and delivering of complete and reliable data from one device to another through
+    a network or between networks. Normally uses TCP for conection-oriented data transission and the UDP for connectionless data
+Internet Layer: Handles addressing and routing of data packets (e.g., IP).
+    Also known as network layer organizes and transmits daata between multiple networks. This includes routes, bridge routers
+    3-layer switches and protocols such as IPv4 and IPv6
+Link Layer: Manages the physical transmission of data over the network (e.g., Ethernet).
+    Also known as the data link describes data transmission between network devices. Data is sentt in packets within a frame
+    of special bit patterns or codes that indicate the beggining and end for each packet. These move through swithces that route
+    information through the physicaal layer from one physical location to another.
+        The Logical Link Control sublayer manages flow and error controls to ensure accurate data transmission between network devices.
+        The MAC sublater manages acces and permissions to transmiting data between devices.
+Learn about IP addresses, subnetting, and CIDR notation:
+IP addresses: Unique identifiers for devices on a network.
+Subnetting: Dividing a network into smaller logical networks.
+CIDR notation: A compact way to represent IP addresses and subnets (e.g., 192.168.1.0/24).
+Explore routing tables and how they determine the path for network traffic.
+Use the route command to view the routing table on your Linux VM.
+
+Network Tools:
+
+tcpdump: A powerful command-line tool for capturing and analyzing network traffic.
+Capture all traffic on your network interface: sudo tcpdump -i eth0
+Capture only HTTP traffic: sudo tcpdump -i eth0 port 80
+Save captured traffic to a file: sudo tcpdump -i eth0 -w mycapture.pcap
+Wireshark: A graphical tool for more advanced network analysis.
+Open Wireshark and select your network interface to start capturing.
+Use filters to analyze specific types of traffic.
+Hands-on:
+
+Capture network traffic on your VM while browsing the web or using other network applications.
+Analyze the captured traffic with tcpdump and Wireshark.
+Identify different protocols, IP addresses, and ports in the captured data.
+Proof: Take screenshots of tcpdump output and Wireshark captures, highlighting specific packets and their details.
+Resources:
+
+TCP/IP Guide
+Wireshark User's Guide
