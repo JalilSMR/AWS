@@ -1,15 +1,41 @@
 Day 8: Linux Networking Deep Dive
 
-1. TCP/IP Stack:
-    * Understand the layers of the TCP/IP model (Application, Transport, Network, Link).
-    * Learn about IP addresses, subnetting, and CIDR notation.
-    * Explore routing tables and how they work.
-2. Network Tools:
-    * Practice using `tcpdump` to capture and analyze network traffic.
-    * Learn to use `Wireshark` for more advanced network analysis.
+1. TCP/IP Stack
+The TCP/IP model is fundamental for understanding how network communication works. It consists of four layers:
+
+Application Layer:
+Handles network applications (HTTP, FTP, DNS, etc.).
+Provides services directly to users.
+Transport Layer:
+Manages communication between devices (TCP and UDP).
+TCP offers reliable connections, while UDP is faster but does not guarantee delivery.
+Network Layer:
+Responsible for packet routing (IP, ICMP).
+Uses IP addresses to identify devices on the network.
+Link Layer:
+Manages data transmission over the physical medium (Ethernet, Wi-Fi).
+Includes MAC addresses to identify devices on a local network.
+
+IP Addresses: Identify devices on a network (IPv4 and IPv6).
+Subnetting: Dividing a network into subnets for better management.
+CIDR (Classless Inter-Domain Routing): Notation to define IP address ranges (e.g., 192.168.1.0/24).
+Routing Tables: Determine how packets are sent between networks.
+
+2. Network Tools
+
+tcpdump:
+Captures and analyzes network traffic in real-time.
+Basic example:sudo tcpdump -i eth0
+
+Wireshark:
+Graphical tool for advanced traffic analysis.
+Allows detailed inspection of packets (headers, payloads).
+Can be used alongside tcpdump to capture and then analyze
+
 3. Hands-on:
-    * Capture and analyze network traffic on your VM using `tcpdump` and `Wireshark`.
-    * Experiment with different network configurations on your VM.
-4. Resources:
-    * TCP/IP Guide: Comprehensive resource on TCP/IP networking.
-    * Wireshark User's Guide.
+Capture and analyze network traffic on your VM using `tcpdump` and `Wireshark`.
+Experiment with different network configurations on your VM.
+
+4. Resources
+Online TCP/IP Guide: http://www.tcpipguide.com/free/index.htm#google_vignette
+Official Wireshark Documentation: https://www.wireshark.org/docs/wsug_html_chunked/
