@@ -1,0 +1,21 @@
+Day 11: EC2 Security and Networking
+
+Security Groups:
+
+Understand how security groups act as virtual firewalls for EC2 instances.
+Learn to configure security group rules to control inbound and outbound traffic.
+Allow HTTP access on port 80.
+Allow HTTPS access on port 443.
+Elastic IP Addresses:
+
+Explore the concept of Elastic IP addresses as static public IP addresses for EC2 instances.
+Understand their use cases (e.g., for web servers, for instances with dynamic public IPs).
+Hands-on:
+
+Create a security group that allows SSH access only from your IP address and HTTP/HTTPS access from anywhere.
+Apply this security group to your EC2 instance.
+Allocate an Elastic IP address and associate it with your instance.
+Proof: Take screenshots of the security group configuration, the Elastic IP allocation, and the association with your instance.
+Resources:
+
+AWS Security Groups documentation

@@ -1,0 +1,21 @@
+Day 10: Introduction to AWS EC2
+
+EC2 Concepts:
+
+Understand Amazon EC2 as a service for running virtual machines in the cloud.
+Learn about different EC2 instance types and their characteristics (CPU, memory, storage, network performance).
+Explore Amazon Machine Images (AMIs) as pre-configured templates for EC2 instances.
+Hands-on:
+
+Launch an EC2 instance using the AWS Management Console.
+Choose an Amazon Linux 2 AMI.
+Select a t2.micro instance type (free tier eligible).
+Connect to the instance using SSH.
+Use the key pair you downloaded when launching the instance.
+Explore the instance's operating system and configuration.
+Run some basic Linux commands (e.g., uname -a, df -h).
+Proof: Take screenshots of the EC2 instance launch wizard, the SSH connection, and the output of the commands you ran on the instance.
+Resources:
+
+AWS EC2 documentation
+AWS EC2 FAQs

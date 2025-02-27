@@ -1,0 +1,23 @@
+Day 12: Introduction to Amazon S3
+
+S3 Concepts:
+
+Understand Amazon S3 as an object storage service for storing and retrieving any amount of data.
+Learn about S3 buckets, objects, and keys.
+Buckets: Containers for storing objects.
+Objects: Files and their metadata.
+Keys: Unique identifiers for objects within a bucket.
+Explore S3 storage classes and their cost implications (e.g., Standard, Intelligent-Tiering, Glacier).
+Hands-on:
+
+Create an S3 bucket.
+Choose a globally unique bucket name.
+Upload and download files to/from the bucket.
+Use the AWS Management Console or the AWS CLI.
+Experiment with different S3 storage classes.
+Change the storage class of an object.
+Proof: Take screenshots of your S3 bucket, the uploaded files, and the storage class settings.
+Resources:
+
+Amazon S3 documentation
+Amazon S3 FAQs

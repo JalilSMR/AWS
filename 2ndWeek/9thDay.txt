@@ -1,0 +1,29 @@
+Day 9: Network Security and Firewalls
+
+Firewalls:
+
+Understand the purpose of firewalls in protecting networks from unauthorized access.
+Learn about iptables (or nftables, if your distribution uses it) for managing firewalls on Linux.
+List existing firewall rules: sudo iptables -L
+Allow incoming SSH traffic: sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+Block all other incoming traffic: sudo iptables -P INPUT DROP
+Explore different firewall rules and how to configure them to allow or block specific traffic.
+Network Security Concepts:
+
+Learn about common network security threats:
+Denial-of-service (DoS) attacks
+Port scanning
+Man-in-the-middle (MitM) attacks
+Understand basic security measures:
+Encryption (e.g., HTTPS, SSH)
+Virtual Private Networks (VPNs)
+Hands-on:
+
+Configure a basic firewall on your VM using iptables (or nftables).
+Allow only SSH access from your host machine's IP address.
+Test the firewall by trying to access different ports on your VM from your host machine.
+Proof: Take screenshots of your iptables rules and the results of your tests.
+Resources:
+
+iptables documentation (or nftables documentation)
+SANS Institute resources on network security

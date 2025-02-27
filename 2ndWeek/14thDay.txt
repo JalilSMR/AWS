@@ -1,0 +1,36 @@
+Day 14: Mini Project - Secure Web Server Deployment with Monitoring and Logging
+
+Goal: Apply your knowledge to deploy a secure web server on AWS with monitoring and logging capabilities.
+
+Environment Setup:
+
+Launch an EC2 instance in your VPC (use the one from Day 13).
+Configure security groups to allow SSH access from your IP and HTTP/HTTPS access from anywhere.
+Web Server Installation:
+
+Install a web server (Apache or Nginx) on the instance.
+Configure the web server to serve a basic website.
+Create an index.html file.
+Security Hardening:
+
+Update the server's operating system and packages.
+Configure a firewall using iptables (or nftables) to restrict unnecessary traffic.
+Implement SSH key-based authentication.
+Monitoring and Logging:
+
+Install and configure the AWS CloudWatch agent on the instance.
+Collect system metrics (CPU utilization, memory usage, disk space) and web server logs.
+Create a CloudWatch dashboard to visualize the collected data.
+Set up CloudWatch alarms to notify you of any unusual activity or errors.
+Verification:
+
+Access your website from your local machine using its public IP address or DNS name.
+Test the security of your server using online vulnerability scanners.
+Monitor the CloudWatch dashboard and alarms for any issues.
+Proof:
+
+Screenshots of the EC2 instance, security group configuration, and web server setup.
+Screenshots of the CloudWatch agent installation, configuration, and dashboard.
+Screenshots of the CloudWatch alarms.
+A screen recording of you accessing your website and demonstrating the monitoring and logging capabilities.
+This mini-project will challenge you to integrate your Linux and AWS skills, including networking, security, and monitoring. It's a great way to consolidate your learning and gain practical experience with real-world scenarios. Remember to document your steps and take screenshots as you progress. Good luck!

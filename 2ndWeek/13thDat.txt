@@ -1,0 +1,23 @@
+Day 13: Amazon VPC Fundamentals
+
+VPC Concepts:
+
+Understand Amazon VPC as a service for creating logically isolated networks in the AWS cloud.
+Learn about subnets, route tables, and internet gateways.
+Subnets: Segments of a VPC with their own IP address range.
+Route tables: Define how network traffic is routed within a VPC.
+Internet gateways: Allow communication between a VPC and the internet.
+Explore network access control lists (NACLs) as an optional layer of security for subnets.
+Hands-on:
+
+Create a VPC with a public subnet.
+Choose an IP address range for your VPC.
+Launch an EC2 instance in the public subnet.
+Configure routing to allow internet access from the instance.
+Create a route table and associate it with the subnet.
+Add a route to the internet gateway.
+Proof: Take screenshots of your VPC configuration, the subnet, the route table, and the EC2 instance in the public subnet.
+Resources:
+
+Amazon VPC documentation
+Amazon VPC FAQs
