@@ -3,8 +3,21 @@ Day 10: Introduction to AWS EC2
 EC2 Concepts:
 
 Understand Amazon EC2 as a service for running virtual machines in the cloud.
+    Amazon EC2 provides on-demand, scalable computing capacity in the AWS cloud, it reduces hardware costs to launch as many
+    or as few virtual servers as we need, configure security and networking, and manage storage.
 Learn about different EC2 instance types and their characteristics (CPU, memory, storage, network performance).
+    Each instance of EC2 have a determined number of characters, the firts one is the instance familiy (here is the series, Generation and Options)
+    and the instance size. For example c7gn.2xlarge, is a c series, generation 7, and it is a large instance. This have 8vCPU, 16GB of ram, an storage from EBS
+    A network bandwith up to 50 and a EBS bandwith up to 10 Gbps
 Explore Amazon Machine Images (AMIs) as pre-configured templates for EC2 instances.
+    Is an image that provides the software that is requiered to set up and boot in Amazon EC2 instance. Each one contains a block device mappping that specifies
+    the block devices to attach to the instance.
+    An AMI is specific to the following
+        Region
+        Operating system
+        Processor architectures
+        Root device type
+        Virtualization Type
 Hands-on:
 
 Launch an EC2 instance using the AWS Management Console.

@@ -9,7 +9,14 @@ Allow HTTPS access on port 443.
 Elastic IP Addresses:
 
 Explore the concept of Elastic IP addresses as static public IP addresses for EC2 instances.
+    A Elastic IP Addresses is a static Public IPv4 that you can associate with the AWS resources, they´re elastic because it can be easily remap them
+    to different instances or network interfaces with your AWS accounts as your needs change
 Understand their use cases (e.g., for web servers, for instances with dynamic public IPs).
+    Web servers: If you´re hosting a website on EC2 you´ll ned a consistent IP addres that users can access.
+    Failover: In a HA setup, if the primary istance fails, it can quickly reasociate the Elastic IP with a standby instance
+    Remote access: If you need to consistently connect to the instances outside AWS, for axample SSH access
+    DNS Records: When configuring DNS recors, we need a static IP address to point to.
+    Network Address Translation (NAT): Elastic IPs can be used as NAT gateways to allow instances in a private subnet to acces the internet
 Hands-on:
 
 Create a security group that allows SSH access only from your IP address and HTTP/HTTPS access from anywhere.

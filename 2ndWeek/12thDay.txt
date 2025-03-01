@@ -4,10 +4,15 @@ S3 Concepts:
 
 Understand Amazon S3 as an object storage service for storing and retrieving any amount of data.
 Learn about S3 buckets, objects, and keys.
+    Amazon Simple Storage Service (Amazon S3) is an object storage service offering industy-leading scalability, security and performance
 Buckets: Containers for storing objects.
+    Stores data as objects within buckets. An object is a file and any metadata that describes the file
 Objects: Files and their metadata.
 Keys: Unique identifiers for objects within a bucket.
 Explore S3 storage classes and their cost implications (e.g., Standard, Intelligent-Tiering, Glacier).
+    s3-Intelligent-tiering: Is designed to optimize storage costs by moving data to the most cost-effective ACCESS TIER WHEN ACCES PATTERNS CHANGE.
+    s3 Glacier sotarge: Are purpose built for data archiving and are designed to provide with the highets performance, and the lowes cost archive in the cloud.
+    
 Hands-on:
 
 Create an S3 bucket.

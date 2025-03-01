@@ -3,20 +3,59 @@ Day 9: Network Security and Firewalls
 Firewalls:
 
 Understand the purpose of firewalls in protecting networks from unauthorized access.
+    Is a network security device that separates a trusted internal network from an external network.
+    It regulates incoming and outgoing network traffic based on preset security rules.
 Learn about iptables (or nftables, if your distribution uses it) for managing firewalls on Linux.
+    In linux, the firewalling is takin care of using netfilter, which is a kernel module that decides what
+    packets are allowed to come in or go outside. Iptables are just the interface
 List existing firewall rules: sudo iptables -L
+    
 Allow incoming SSH traffic: sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+    The incomin SSH trafic refer to an input chains prerrouting
 Block all other incoming traffic: sudo iptables -P INPUT DROP
 Explore different firewall rules and how to configure them to allow or block specific traffic.
 Network Security Concepts:
 
 Learn about common network security threats:
 Denial-of-service (DoS) attacks
+    Also known as deistributed denial of service is a malicious attempt to disrupt the normal traffil of a targeted server, service or
+    network by overwhelming the target or this surrounding infraestructure with a flood of internet traffic.
 Port scanning
+    A port scan i sa technique hackers use to discver open dorrs or weak points in the network.
+    When they send a message to a port, the response they receive determins wheter the port is being used
+    A port is a point on a computer where the information exchange between multiple programs and the internet to devices or other computer takes place
+    Here are some important ports
+        20: (UDP): File transfer protocol used for transferring data
+        22(TCP): Secure Shell Protocol used for FTP,port forwarding and secure logins
+        23(TCP): The Telnet Protocol used for unencrypted communication
+        53 (UDP): The DNS which transaltes internet domain names into machine-readable IP addresses
+        80(TCP): The wordldwide Web Hypertex Transfer Protocol (HTTP)
 Man-in-the-middle (MitM) attacks
+    Is a general term for when a perpetrador positions himself in a conversation between a user and an application, mkin a normal exchange of information.
+    The goal of the attack is to steal personal information, such as login credentials, account details, and credit cards numbers, the target of this attacks
+    typically are SaaS businesses, e-commerce sites and other where the login is requiered.
 Understand basic security measures:
 Encryption (e.g., HTTPS, SSH)
+    SSH is a cryptographic newtork protocol that provides a secure way to access and manage remote systems.
+        The client is the user´s local machine where SSH keys are generated and stored. It´s from this client that users interact
+        SSH Key Pair is the core of SSH authentication, this consists of a private and a public key.
+        The authentication process consists in this steps
+            The user generatess an SSH key pair, on their client machine
+            The user associates their public SSH key with the DNs or service he wants to use it.
+            The server requests the user´s public key and verifies it agains the stored public key.
+            If the keys mathch, the server grants access to the resources.
+    HTTPS is a widely used protocol for secure communication over the internet
+        The client represents the user´s local machine
+        We can use a variety of authentication Methods
+            Username and Password: This method is becoming less common due security concerns
+            Personal Acces Token (PAT):Is an OTP to acces the resources
+            The authentication process is the following
+                The user initiates an HTTPS request a service via web browser
+                If using a unsername and password, it provides the credentials, if use a PAT, they provide their token
+    The key differences between these architectures are the auth method, the security level, the ease of use and acces control.
 Virtual Private Networks (VPNs)
+    Stands for VIrtual Prvate Network, it runs in the background while you ´re using the internet, keeping you safe and protecting yur privacy.
+    This conection encrypts all the data and passes through a safe intermediante stage, known as VPN server.
 Hands-on:
 
 Configure a basic firewall on your VM using iptables (or nftables).
