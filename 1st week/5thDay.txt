@@ -5,6 +5,7 @@ AWS Account Setup:
 Create an AWS account using your email address.
 Choose a strong password and set up MFA for security.
 Be aware of the AWS Free Tier limitations.
+
 AWS Management Console Exploration:
 
 Log in to the AWS Management Console.

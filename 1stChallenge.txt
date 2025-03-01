@@ -3,12 +3,16 @@ Linux Challenges
 Broken Permissions:
 
 Intentionally mess up the permissions of your home directory so that you can't access it.
+        In order to break a file we can do it by using chmod 000
 Use the sudo command and chmod to fix the permissions and regain access.
+        To regain access to the file we can fix it by using sudo chmod 667 to grant permissions to all users and groups
 Proof: Take screenshots of the error message when you can't access the directory, the commands you used to fix it, and the successful access after fixing.
 Hidden Treasure:
 
 Create a hidden directory within your home directory (starts with a dot, e.g., .hidden).
+    We can do this by using mkdir .hiden
 Place a text file inside with a secret message.
+    inside this folder we use cat hidenfile.txt to create a file inside a hiden directory
 Use the ls -a command to find the hidden directory and cat to display the message.
 Proof: Take a screenshot of the terminal output showing the hidden directory and the secret message.
 Process Explorer:
@@ -30,13 +34,17 @@ Choose a service running on your VM (e.g., nginx).
 Use systemctl to stop, start, and restart the service.
 Check the status of the service after each action.
 Proof: Take screenshots of the systemctl commands and their output showing the service status changes.
+
 AWS Challenges
 
 IAM Lockdown:
 
 Create a new IAM user with no permissions.
+    This is creaty using a IAMadmin account(Need to have at least a policy attached to create accounts)
 Try to access S3 with this user. You should get an "Access Denied" error.
+    Need at least ReadOnlyS3 Permission
 Attach a policy to the user that grants read-only access to a specific S3 bucket.
+    This need to be done by using a IAM user that have permission to modify other users (iamadmin for exampple)
 Verify that the user can now list the contents of that bucket but can't upload or delete objects.
 Proof: Take screenshots of the IAM user configuration, the "Access Denied" error, the attached policy, and the successful listing of the bucket contents.
 Security Group Puzzle:
