@@ -3,16 +3,35 @@ Day 13: Amazon VPC Fundamentals
 VPC Concepts:
 
 Understand Amazon VPC as a service for creating logically isolated networks in the AWS cloud.
+    You can launch AWS resources isolated based on the bussiness logic.
 Learn about subnets, route tables, and internet gateways.
+    Subnets: Is a network inside a network, making more efficient, instead of using the whole network you can use only one part of it.
+    Routing table: Is a data structure that stores information about network paths and us used to direct data to hte correct destination.
+    Internet Gateway: Is a device or node that copnnects two different networks using different protocols, allowing network traddic to enter or leave a network.
 Subnets: Segments of a VPC with their own IP address range.
 Route tables: Define how network traffic is routed within a VPC.
 Internet gateways: Allow communication between a VPC and the internet.
 Explore network access control lists (NACLs) as an optional layer of security for subnets.
+    Is a set of rules used to control network traffic and reduce attacks by deternming whether to permit or deny traffic based on various criteria sucha as IP addresses
+    protocol or port number, these rule are applied as the subnet level and can be used in varous devices, such as firewalls and switches to enhance security
 Hands-on:
 
 Create a VPC with a public subnet.
+    Go to the AWS Management Console and navigate to the VPC service.
+    Click "Your VPCs" and then "Create VPC".
+    Give your VPC a name (e.g., "MyVPC").
+    For the IPv4 CIDR block, enter an IP address range for your VPC (e.g., 10.0.0.0/16). This defines the range of private IP addresses that can be used within your VPC.
+    For IPv6 CIDR block, choose "Amazon-provided IPv6 CIDR block".
+    Leave the tenancy as "Default".
+    Click "Create VPC".
 Choose an IP address range for your VPC.
+    In the VPC console, click "Subnets" and then "Create subnet".
+    Give your subnet a name (e.g., "MyPublicSubnet").
+    Select the VPC you just created ("MyVPC").
+    Choose an Availability Zone within your selected region.
+    For the IPv4 CIDR block, enter a subnet range within your VPC's CIDR block (e.g., 10.0.1.0/24).
 Launch an EC2 instance in the public subnet.
+    aws ec2 run-instances --image-id "ami-05b10e08d247fb927" --instance-type "t2.micro" --key-name "MyKeyPair" --network-interfaces '{"SubnetId":"subnet-0abc705b0f469921c","AssociatePublicIpAddress":true,"DeviceIndex":0,"Ipv6AddressCount":0,"Groups":["sg-070d492adcbc3f3b5"]}' --credit-specification '{"CpuCredits":"standard"}' --tag-specifications '{"ResourceType":"instance","Tags":[{"Key":"Name","Value":"NewLinuxServer"}]}' --metadata-options '{"HttpEndpoint":"enabled","HttpPutResponseHopLimit":2,"HttpTokens":"required"}' --private-dns-name-options '{"HostnameType":"ip-name","EnableResourceNameDnsARecord":false,"EnableResourceNameDnsAAAARecord":false}' --count "1" 
 Configure routing to allow internet access from the instance.
 Create a route table and associate it with the subnet.
 Add a route to the internet gateway.
