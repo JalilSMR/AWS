@@ -1,0 +1,39 @@
+Day 16:  Elastic Block Store (EBS)
+
+1. EBS Volumes
+
+Understand Different EBS Volume Types
+
+General Purpose SSD (gp2 and gp3):
+gp2: Baseline performance of 3 IOPS/GB, up to 16,000 IOPS.
+gp3: Allows independent scaling of IOPS and throughput, cost-effective for most workloads.
+
+Provisioned IOPS SSD (io1 and io2):
+io1: High performance with up to 64,000 IOPS and 1,000 MB/s throughput.
+io2: Higher durability and performance, up to 256,000 IOPS and 4,000 MB/s throughput.
+
+Throughput Optimized HDD (st1): Designed for frequently accessed, throughput-intensive workloads (e.g., big data, data warehouses).
+Cold HDD (sc1): Low-cost storage for infrequently accessed data (e.g., backups, archives).
+
+Learn About EBS Volume Performance Characteristics
+
+IOPS (Input/Output Operations Per Second): Measures read/write operations.
+Throughput: Measures data transfer speed (MB/s).
+Latency: Time taken for a read/write operation.
+Burst Performance: Temporary performance boost for gp2 volumes.
+
+Explore EBS Snapshots for Backups and Data Transfer
+
+Snapshots: Point-in-time backups of EBS volumes stored in S3.
+Incremental backups (only changes are saved).
+Can be used to create new volumes or migrate data across regions.
+Data Transfer: Snapshots can be shared across AWS accounts or copied to other regions.
+
+2. Hands-on:
+Create and attach EBS volumes to an EC2 instance.
+Take EBS snapshots and restore volumes from snapshots.
+Experiment with different EBS volume types and observe their performance.
+
+3. Resources:
+Amazon EBS documentation. https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html
+Amazon EBS FAQs. https://aws.amazon.com/ebs/faqs/
