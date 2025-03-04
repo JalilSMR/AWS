@@ -1,0 +1,47 @@
+Day 15: Advanced EC2 Configurations
+
+1. Instance Metadata and User Data
+
+Instance Metadata: Metadata provides information about your EC2 instance, such as instance ID, public IP, AMI ID, and more.
+Use the following command from within the instance: curl http://169.254.169.254/latest/meta-data/
+
+User Data: Scripts or configuration data passed to an instance at launch to automate setup tasks.
+User data can be used to install software, update configurations, or run scripts.
+
+Example: Add a user data script when launching an EC2 instance to install Apache web server:
+#!/bin/bash
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+
+2. EC2 Placement Groups
+
+Cluster Placement Group:
+Instances are grouped within a single Availability Zone (AZ) for low-latency, high-throughput performance.
+Use case: High-performance computing (HPC), tightly coupled workloads.
+
+Spread Placement Group:
+Instances are spread across distinct hardware to reduce the risk of simultaneous failures.
+Use case: Critical applications requiring high availability.
+
+Partition Placement Group:
+Instances are divided into partitions, each running on separate hardware.
+Use case: Large distributed workloads like Hadoop or Kafka.
+
+Understand the use cases for each placement group type
+Cluster: Best for workloads requiring low latency and high network throughput.
+Spread: Best for fault tolerance and minimizing simultaneous failures.
+Partition: Best for large-scale, distributed applications.
+
+3. Hands-on
+Use user data to install software and configure settings on an EC2 instance during launch.
+Experiment with different placement groups and observe their impact on network performance.
+
+4. Resources:
+AWS EC2 Instance Metadata documentation. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html
+AWS EC2 User Data documentation. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
+AWS EC2 Placement Groups documentation. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
+
+
+
