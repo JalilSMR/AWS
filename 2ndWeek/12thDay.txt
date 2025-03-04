@@ -17,9 +17,13 @@ Hands-on:
 
 Create an S3 bucket.
 Choose a globally unique bucket name.
+    Each bucket need to have a unique name acrross all the services provided by AWS globally
 Upload and download files to/from the bucket.
+    To upload a file you can use the interface directly
 Use the AWS Management Console or the AWS CLI.
+    Need to run aws s3 commands, for example move, and cp
 Experiment with different S3 storage classes.
+    It exist glacier, standar, and inteligent tiering, the best one for practice and free tier is the standard
 Change the storage class of an object.
 Proof: Take screenshots of your S3 bucket, the uploaded files, and the storage class settings.
 Resources:

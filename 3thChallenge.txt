@@ -1,0 +1,19 @@
+
+Week 3 Project: Highly Available Web Server with EBS and S3 Backup
+
+This project builds upon your Week 2 web server by adding high availability and data protection features.
+
+Steps:
+
+Create an EBS volume: Create an EBS volume and attach it to your web server instance. Mount the volume to a directory where your website files will be stored (e.g., /var/www/html).
+Set up a second EC2 instance: Launch a second EC2 instance with the same configuration as your web server. Attach a second EBS volume to this instance and mount it to the same directory.
+Configure a load balancer: Create an Elastic Load Balancer (ELB) and configure it to distribute traffic between your two web server instances. This ensures high availability by automatically routing traffic to the healthy instance.
+Set up S3 backups: Create an S3 bucket and configure automated backups of your website files from your EBS volumes to the S3 bucket. This provides data protection in case of EBS volume failure.
+Test high availability: Simulate an instance failure by stopping one of your web server instances. Verify that the load balancer automatically redirects traffic to the healthy instance and your website remains accessible.
+Proof of Completion:
+
+Screenshots of your EBS volume creation and attachment.
+Screenshots of your load balancer configuration.
+Screenshots of your S3 bucket and backup configuration.
+A screen recording of you accessing your website through the load balancer and demonstrating high availability by stopping one of the instances.
+These projects will challenge you to apply your knowledge and gain practical experience with essential Linux and AWS concepts. Remember to document your steps and take screenshots as you progress. Good luck!
