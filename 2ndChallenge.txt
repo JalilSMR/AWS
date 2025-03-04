@@ -1,0 +1,16 @@
+Week 2 Project: Secure File Transfer Server
+
+This project focuses on setting up a secure file transfer server on your Linux VM, allowing you to transfer files securely with other users or systems.
+
+Steps:
+
+Install an SSH server: If not already installed, install an SSH server on your Linux VM (e.g., sudo apt install openssh-server).
+Configure SSH for key-based authentication: Disable password authentication and enable key-based authentication for enhanced security. This involves generating an SSH key pair on your local machine and adding the public key to the authorized_keys file on your VM.
+Set up a user for file transfer: Create a dedicated user account on your VM specifically for file transfers. Assign appropriate permissions to a directory for this user to access and manage files.
+Configure a firewall: Use iptables (or nftables) to configure your firewall to allow only SSH traffic from trusted IP addresses.
+Test file transfer: From your local machine, use an SFTP client (like FileZilla) to connect to your VM using the dedicated user account and your private key. Test uploading and downloading files.
+Proof of Completion:
+
+Screenshots of your SSH server configuration (/etc/ssh/sshd_config) showing key-based authentication enabled.
+Screenshots of your firewall rules (iptables -L) showing only SSH traffic allowed.
+A screen recording of you successfully transferring files to and from your VM using an SFTP client.
