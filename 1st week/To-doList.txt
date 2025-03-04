@@ -1,0 +1,102 @@
+This document outlines the tasks for the first week of your AWS Certified Solutions Architect Professional preparation, focusing on Operating Systems (Linux) and initial AWS exploration.
+
+Overall Goal: Establish a solid Linux foundation and begin familiarizing yourself with the AWS environment.
+
+Daily/Ongoing Tasks:
+
+ Active Recall: After studying a topic, try to recall the key concepts without looking at your notes. This strengthens memory and understanding.
+ Spaced Repetition: Review previously learned material at increasing intervals to reinforce long-term retention. Use flashcards or a spaced repetition software (e.g., Anki).
+ AWS Free Tier Exploration:  Dedicate time each day to explore the AWS Free Tier.  Even simple actions in the console reinforce learning.
+
+Week 1 To-Do List:
+
+Day 1: Setting up Your Linux Environment
+
+1. Choose a Distribution: Select a Linux distribution for your virtual machine (VM). Ubuntu or CentOS are recommended for AWS familiarity.
+2. Virtual Machine Setup:
+     Download and install a virtualization platform (VirtualBox or VMware).
+     Download the ISO image of your chosen Linux distribution.
+     Create a new VM. Allocate sufficient resources (at least 2 CPUs, 4GB RAM, 20GB disk space).
+     Install the Linux distribution on the VM.
+3. Basic Linux Commands:
+     Practice navigating the file system (cd, ls, pwd).
+     Learn file manipulation commands (touch, cp, mv, rm, mkdir, rmdir).
+     Explore basic system information commands (uname, hostname, uptime).
+4. Resources:
+     LinuxCommand.org: Excellent resource for learning Linux commands.
+     OverTheWire Wargames: Fun way to learn Linux security concepts.
+
+Day 2: Linux User and Permission Management
+
+1. User Management:
+     Learn to create, modify, and delete users (useradd, usermod, userdel).
+     Understand user groups (groupadd, groupmod, groupdel).
+     Practice switching between users (su, sudo).
+2. Permissions:
+     Understand file permissions (read, write, execute).
+     Learn to change file permissions (chmod).
+     Explore special permissions (SUID, SGID, sticky bit).
+3. Hands-on:
+     Create multiple users and groups.
+     Assign different permissions to files and directories.
+     Practice using sudo for administrative tasks.
+4. Resources:
+     Linux man pages (e.g., `man chmod`).
+
+Day 3: Package Management and System Updates
+
+1. Package Managers:
+     Learn about apt (Debian/Ubuntu) or yum (CentOS/RHEL).
+     Practice installing, updating, and removing software packages.
+2. System Updates:
+     Learn how to update the system and installed packages.
+3. Hands-on:
+     Install a web server (Apache or Nginx) using the package manager.
+     Update the system to the latest packages.
+4. Resources:
+     Distribution-specific documentation (e.g., Ubuntu Server Guide).
+
+Day 4: Networking Basics on Linux
+
+1. Network Configuration:
+     Learn to configure static and dynamic IP addresses.
+     Understand network interfaces and how to manage them.
+2. Network Tools:
+     Practice using `ping`, `traceroute`, `netstat`, `ip`, and `ifconfig`.
+3. Hands-on:
+     Configure network interfaces on your VM.
+     Test network connectivity using network tools.
+4. Resources:
+     Linux networking tutorials online.
+
+Day 5: Introduction to AWS and the Management Console
+
+1. AWS Account Setup:
+     Create an AWS account. Be aware of the AWS Free Tier limitations.
+2. AWS Management Console Exploration:
+     Familiarize yourself with the AWS Management Console.
+     Explore different services and their functionalities.
+     Navigate through the console and understand the layout.
+3. AWS Regions and Availability Zones:
+     Understand the concept of AWS Regions and Availability Zones.
+     Identify the closest AWS Region to you.
+4. Resources:
+     AWS Getting Started Guide.
+
+Day 6: AWS Identity and Access Management (IAM) Basics
+
+1. IAM Concepts:
+     Learn about IAM users, groups, roles, and policies.
+     Understand the principle of least privilege.
+2. Hands-on:
+     Create an IAM user with limited permissions.
+     Explore different IAM policies.
+3. Resources:
+     AWS IAM Documentation.
+
+Day 7: Review and Practice
+
+1. Review: Review all the topics covered during the week.
+2. Practice: Practice Linux commands and AWS console navigation.
+3. Troubleshooting: Try to troubleshoot common Linux and AWS issues.
+4. Plan for Week 2:  Preview the topics for the next week (Security, Identity Management, Monitoring, and Automation) and start gathering resources.

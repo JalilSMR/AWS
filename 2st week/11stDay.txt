@@ -1,0 +1,15 @@
+Day 11: EC2 Security and Networking
+
+1. Security Groups:
+Understand how security groups work as virtual firewalls for EC2 instances.
+Learn to configure security group rules to control inbound and outbound traffic.
+
+2. Elastic IP Addresses:
+Explore the concept of Elastic IP addresses and their use cases.
+    
+3. Hands-on:
+Create and configure security groups for your EC2 instance.
+Assign an Elastic IP address to your instance.
+
+4. Resources:
+AWS Security Groups documentation: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html

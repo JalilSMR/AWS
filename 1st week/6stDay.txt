@@ -1,0 +1,35 @@
+Day 6: AWS Identity and Access Management (IAM) Basics
+
+1. IAM Concepts
+IAM Users
+An IAM user represents a person or application that interacts with AWS.
+Each user has unique credentials (username/password or access keys) to access AWS services.
+Users can be granted specific permissions to perform actions on AWS resources.
+
+IAM Groups
+A group is a collection of IAM users.
+Instead of assigning permissions to individual users, you can assign permissions to a group, and all users in the group inherit those permissions.
+Simplifies permission management for multiple users with similar access needs.
+
+IAM Roles
+A role is an IAM entity that defines a set of permissions but is not associated with a specific user or group.
+Roles are assumed by users, applications, or AWS services to gain temporary permissions.
+Commonly used for cross-account access or granting AWS services (e.g., EC2, Lambda) permissions to interact with other services.
+
+IAM Policies
+Policies are JSON documents that define permissions.
+They specify what actions are allowed or denied on which AWS resources.
+Policies can be attached to users, groups, or roles.
+
+Principle of Least Privilege
+Grant only the minimum permissions necessary for a user, group, or role to perform their tasks.
+Reduces the risk of accidental or malicious misuse of AWS resources.
+
+2. Hands-on:
+Create an IAM user with limited permissions.
+Explore different IAM policies.
+
+3. Resources
+AWS IAM Documentation https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html
+AWS IAM User Guide https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html
+IAM Policies and Permissions https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html

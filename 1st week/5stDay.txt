@@ -1,0 +1,21 @@
+Day 5: Introduction to AWS and the Management Console
+
+AWS Account Setup:
+
+Create an AWS account using your email address.
+Choose a strong password and set up MFA for security.
+Be aware of the AWS Free Tier limitations.
+AWS Management Console Exploration:
+
+Log in to the AWS Management Console.
+Explore the console interface and familiarize yourself with the navigation.
+Browse different AWS services categorized by functionality (compute, storage, networking, etc.).
+Proof: Take screenshots of different sections of the AWS Management Console.
+AWS Regions and Availability Zones:
+
+Understand the concept of AWS Regions (geographical locations) and Availability Zones (isolated locations within a region).
+Identify the AWS Region closest to you.
+Proof: Take a screenshot of the AWS Management Console showing your selected region.
+Resources:
+
+AWS Getting Started Guide

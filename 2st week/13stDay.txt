@@ -1,0 +1,33 @@
+Day 13: Amazon VPC Fundamentals
+
+1. VPC Concepts
+Key Benefits of Amazon VPC:
+Isolation and Security
+Customizable Networking
+Connectivity Options
+Scalability and Flexibility
+Scalability and Flexibility
+
+Subnets, Route Tables, and Internet Gateways
+
+Subnets:
+A subnet is a segment of a VPC's IP address range where you can place groups of isolated resources.
+Subnets can be public or private
+
+Route Tables:
+A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed
+
+Internet Gateway (IGW):
+An Internet Gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between instances in your VPC and the internet.
+
+Network Access Control Lists (NACLs):
+Network Access Control Lists are an optional layer of security for your VPC that act as a firewall for controlling traffic in and out of one or more subnets.
+
+2. Hands-on
+Create a VPC with a public subnet.
+Launch an EC2 instance in the public subnet.
+Configure routing to allow internet access from the instance.
+
+3. Resources
+Amazon VPC documentation: https://docs.aws.amazon.com/vpc/
+Amazon VPC FAQs: https://aws.amazon.com/vpc/faqs/

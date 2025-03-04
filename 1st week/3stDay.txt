@@ -1,0 +1,40 @@
+Day 3: Package Management and System Updates
+
+apt (Advanced Package Tool) is the default package manager in Ubuntu.
+
+Update the package list: 
+sudo apt update
+Install a package:
+sudo apt install <package-name>
+Remove a package: 
+sudo apt remove <package-name>
+Remove a package and its configuration files:
+sudo apt purge <package-name>
+Search for a package:
+apt search <keyword>
+Upgrade installed packages: 
+sudo apt upgrade
+
+Update Commands:
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo apt autoremove
+
+Install Apache
+sudo apt install apache2
+sudo systemctl start nginx
+sudo systemctl enable nginx
+sudo systemctl status nginx
+
+Resources:
+Ubuntu Server Guide: Official documentation for managing Ubuntu servers. https://ubuntu.com/server/docs
+Ubuntu Community Help Wiki: Guides and tutorials for Ubuntu users. https://help.ubuntu.com/community
+    
+
+
+
+
+
+
+  

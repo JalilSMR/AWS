@@ -1,0 +1,108 @@
+Week 2 To-Do List:
+
+Day 8: Linux Networking Deep Dive
+
+1. TCP/IP Stack:
+    * Understand the layers of the TCP/IP model (Application, Transport, Network, Link).
+    * Learn about IP addresses, subnetting, and CIDR notation.
+    * Explore routing tables and how they work.
+2. Network Tools:
+    * Practice using `tcpdump` to capture and analyze network traffic.
+    * Learn to use `Wireshark` for more advanced network analysis.
+3. Hands-on:
+    * Capture and analyze network traffic on your VM using `tcpdump` and `Wireshark`.
+    * Experiment with different network configurations on your VM.
+4. Resources:
+    * TCP/IP Guide: Comprehensive resource on TCP/IP networking.
+    * Wireshark User's Guide.
+
+Day 9: Network Security and Firewalls
+
+1. Firewalls:
+    * Understand the purpose and types of firewalls.
+    * Learn about `iptables` (or `nftables`) for managing firewalls on Linux.
+    * Explore different firewall rules and how to configure them.
+2. Network Security Concepts:
+    * Learn about common network security threats (e.g., denial-of-service attacks, port scanning).
+    * Understand basic security measures (e.g., encryption, VPNs).
+3. Hands-on:
+    * Configure a firewall on your VM using `iptables` (or `nftables`).
+    * Experiment with different firewall rules to allow/block specific traffic.
+4. Resources:
+    * `iptables` documentation (or `nftables` documentation).
+    * SANS Institute resources on network security.
+
+Day 10: Introduction to AWS EC2
+
+1. EC2 Concepts:
+    * Understand what Amazon EC2 is and its use cases.
+    * Learn about different EC2 instance types and their characteristics.
+    * Explore Amazon Machine Images (AMIs).
+2. Hands-on:
+    * Launch an EC2 instance using the AWS Management Console.
+    * Connect to the instance using SSH.
+    * Explore the instance's operating system and configuration.
+3. Resources:
+    * AWS EC2 documentation.
+    * AWS EC2 FAQs.
+
+Day 11: EC2 Security and Networking
+
+1. Security Groups:
+    * Understand how security groups work as virtual firewalls for EC2 instances.
+    * Learn to configure security group rules to control inbound and outbound traffic.
+2. Elastic IP Addresses:
+    * Explore the concept of Elastic IP addresses and their use cases.
+3. Hands-on:
+    * Create and configure security groups for your EC2 instance.
+    * Assign an Elastic IP address to your instance.
+4. Resources:
+    * AWS Security Groups documentation.
+
+Day 12: Introduction to Amazon S3
+
+1. S3 Concepts:
+    * Understand what Amazon S3 is and its use cases.
+    * Learn about S3 buckets, objects, and keys.
+    * Explore S3 storage classes and their cost implications.
+2. Hands-on:
+    * Create an S3 bucket.
+    * Upload and download files to/from the bucket.
+    * Experiment with different S3 storage classes.
+3. Resources:
+    * Amazon S3 documentation.
+    * Amazon S3 FAQs.
+
+Day 13: Amazon VPC Fundamentals
+
+1. VPC Concepts:
+    * Understand what Amazon VPC is and its benefits.
+    * Learn about subnets, route tables, and internet gateways.
+    * Explore network access control lists (NACLs).
+2. Hands-on:
+    * Create a VPC with a public subnet.
+    * Launch an EC2 instance in the public subnet.
+    * Configure routing to allow internet access from the instance.
+3. Resources:
+    * Amazon VPC documentation.
+    * Amazon VPC FAQs.
+
+Day 14: Mini Project - Secure Web Server Deployment
+
+Goal: Apply your knowledge to deploy a secure web server on AWS.
+
+1. Environment Setup:
+    * Launch an EC2 instance in your VPC.
+    * Configure security groups to allow HTTP/HTTPS access.
+2. Web Server Installation:
+    * Install a web server (Apache or Nginx) on the instance.
+    * Configure the web server to serve a basic website.
+3. Security Hardening:
+    * Update the server's operating system and packages.
+    * Configure a firewall to restrict unnecessary traffic.
+    * Implement SSH key-based authentication.
+4. Verification:
+    * Access your website from your local machine using its public IP address or DNS name.
+    * Test the security of your server using online vulnerability scanners.
+
+This mini-project will help you consolidate your learning and gain practical experience with AWS services. Remember to document your steps and any challenges you encounter.

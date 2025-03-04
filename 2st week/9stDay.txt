@@ -1,0 +1,42 @@
+Day 9: Network Security and Firewalls
+
+1. Firewalls
+
+Purpose of Firewalls:
+Prevent unauthorized access to or from a private network.
+Monitor and filter traffic based on security rules.
+
+Types of Firewalls:
+Packet-Filtering Firewalls: Inspect packets and allow or block them based on rules (e.g., IP addresses, ports).
+Stateful Inspection Firewalls: Track the state of active connections and make decisions based on context.
+
+Proxy Firewalls: Act as intermediaries between end users and the internet, filtering traffic at the application layer.
+Next-Generation Firewalls (NGFW): Combine traditional firewall features with advanced capabilities like intrusion prevention and deep packet inspection.
+
+Linux Firewall Tools:
+iptables: A traditional tool for configuring firewall rules in Linux.
+nftables: A modern replacement for iptables, offering better performance and flexibility.
+
+2. Network Security Concepts
+
+Common Network Security Threats:
+Denial-of-Service (DoS) Attacks: Overwhelm a system with traffic to make it unavailable.
+Port Scanning: Attackers scan open ports to identify vulnerabilities.
+Man-in-the-Middle (MITM) Attacks: Intercept and alter communication between two parties.
+Malware: Malicious software designed to damage or gain unauthorized access.
+
+Basic Security Measures:
+Encryption: Protect data in transit using protocols like TLS/SSL.
+Virtual Private Networks (VPNs): Create secure, encrypted connections over the internet.
+Intrusion Detection Systems (IDS): Monitor networks for suspicious activity.
+Regular Updates: Keep systems and software up to date to patch vulnerabilities.
+
+3. Hands-on
+
+Configure a firewall on your VM using `iptables` (or `nftables`).
+Experiment with different firewall rules to allow/block specific traffic.
+
+4. Resources
+
+iptables Documentation: https://linux.die.net/man/8/iptables
+SANS Institute Resources: https://www.sans.org/

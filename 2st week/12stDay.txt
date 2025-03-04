@@ -1,0 +1,17 @@
+Day 12: Introduction to Amazon S3
+
+1. S3 Concepts:
+Understand what Amazon S3 is and its use cases.
+Learn about S3 buckets, objects, and keys.
+Explore S3 storage classes and their cost implications.
+
+2. Hands-on:
+Create an S3 bucket.
+Upload and download files to/from the bucket.
+Experiment with different S3 storage classes.
+
+3. Resources:
+Amazon S3 documentation: https://docs.aws.amazon.com/s3/
+Amazon S3 FAQs: https://aws.amazon.com/s3/faqs/
+
+Review the images to see the evidences.
