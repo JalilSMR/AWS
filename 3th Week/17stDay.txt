@@ -1,0 +1,59 @@
+Day 17:  S3 Security and Access Control
+
+1. Access Control Lists (ACLs)
+
+What are ACLs?
+ACLs are a legacy access control mechanism that allows you to grant read and write permissions to specific AWS accounts or predefined groups (e.g., "Everyone" or "Authenticated Users").
+ACLs are applied at both the bucket level and the object level.
+
+How ACLs Work:
+Each bucket and object has an ACL attached to it.
+You can grant permissions like READ, WRITE, and FULL_CONTROL to AWS accounts or groups.
+  
+2. Bucket Policies
+
+What are Bucket Policies?
+Bucket policies are JSON-based documents that define permissions for the entire bucket.
+They allow you to control access at the bucket level, including allowing or denying access based on conditions like IP address, AWS account, or request time.
+
+Key Features
+Fine-grained control: You can specify permissions for specific users, roles, or AWS accounts.
+Public access control: You can block public access to the bucket or allow specific public actions.
+Conditions: You can use conditions like aws:SourceIp to restrict access based on IP ranges.
+
+3. S3 Security Best Practices
+
+Encryption:
+
+SSE-S3: Server-Side Encryption with Amazon S3-Managed Keys.
+SSE-KMS: Server-Side Encryption with AWS Key Management Service (KMS) keys.
+SSE-C: Server-Side Encryption with Customer-Provided Keys.
+Always enable encryption for sensitive data at rest.
+
+Versioning:
+Enable versioning to protect against accidental deletion or overwriting of objects.
+Versioning allows you to restore previous versions of an object.
+
+Logging:
+Enable S3 Access Logs to track requests made to your bucket.
+Logs can be stored in another S3 bucket for analysis.
+
+Block Public Access:
+Use the Block Public Access settings to prevent accidental public exposure of your bucket or objects.
+
+IAM Policies:
+Use IAM policies to grant least privilege access to users and roles.
+
+MFA Delete:
+Enable MFA (Multi-Factor Authentication) Delete to add an extra layer of security for deleting objects.
+
+4. Hands-on:
+Configure ACLs and bucket policies to control access to your S3 bucket.
+Enable versioning and logging on your S3 bucket.
+Experiment with S3 encryption options (SSE-S3, SSE-KMS, SSE-C).
+
+5. Resources:
+Amazon S3 Access Control Lists documentation. https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html
+Amazon S3 Bucket Policies documentation. https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html
+AWS Security Best Practices for S3. https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html
+
