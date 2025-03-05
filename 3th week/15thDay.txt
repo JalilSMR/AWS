@@ -1,0 +1,41 @@
+Day 15: Advanced EC2 Configurations
+
+1. Instance Metadata and User Data:
+    * Understand how to access instance metadata.
+        This is data about the instancethat you can acces from within the instance itself, it can be access using the instance metadata service using curl http://169.254.169.254/latest/meta-data
+    * Learn to use user data to automate instance configurations.
+        Is a script that you can provide when launching an isntance to automate configuyrations. It's similar to giving instructions to execute upon startup.
+        User data can be in various formats incluiding bash, cloud-init and PowerShell
+2. EC2 Placement Groups:
+    Placement groups allow you to influence the placement of your EC2 for optimal performance and availability.
+    * Explore different placement group strategies (cluster, spread, partition).
+        Cluster: This strategy packs instances close together within a single AZ, enablking low latency communication between them. This is ideal for applications
+        that requiere a high network performance, such as high-performance computing clusters or a group of web servers.
+        Spread: This strategy places instances on distinc underlying hardware to reduce correlated failures. If one instance fails due to an underlying hardware to reduce
+        correlated failures. If one instance fails due to an undelying hardware issue, the other instances in the spread placement group are less likely to be affected.
+        This is suitable for appointment requiring high availability and fault tolerance, such as critical application servers or databases.
+        Partition: this strategy groups instances into logical partitions within a placement group. Each partitios runs on dedicated hardware, providin isolation an performance
+        predicability for large distributed applciations. This is useful for large-scale applications that need to b divided to be smaller, isolated groups.
+    * Understand the use cases for each placement group type.
+        Security Groups
+            Security groups act as virtual firewalls for your EC2 instances, controlling inbound and outbound traffic. They allow you to define rules that specify which traffic is allowed or denied based on protocols, ports, and source/destination IP addresses.
+            When you launch an EC2 instance, you can associate it with one or more security groups. Each security group contains a set of rules that define the allowed traffic. You can modify these rules at any time, even after the instance is running.
+            To create a security group, you specify a name and description, and then define the inbound and outbound rules. For example, to allow SSH access to your instance, you would create an inbound rule that allows TCP traffic on port 22 from your IP address.
+            Security groups are stateful, meaning that return traffic is automatically allowed if the initial traffic was allowed. For example, if you allow HTTP traffic on port 80 from the internet, the responses from your web server will be automatically allowed back to the internet.
+            When multiple security groups are applied to an instance, the rules are aggregated. The most permissive rule applies in cases where rules overlap.
+        Elastic IP Addresses
+            Elastic IP addresses are static public IPv4 addresses that you can associate with your AWS account. They are designed to provide a consistent IP address for your instances, even if they are stopped or restarted.
+            Elastic IP addresses are useful for various scenarios, including:
+            Maintaining a consistent IP address for your web server: If you're hosting a website on an EC2 instance, you can associate an Elastic IP address with it to ensure that the website's IP address remains the same, even if the instance is stopped or restarted. This is important for maintaining DNS records and ensuring that users can consistently access your website.
+            Implementing failover: If you have multiple instances running your application, you can use an Elastic IP address to quickly switch traffic from one instance to another in case of a failure. This helps to minimize downtime and ensure that your application remains available.
+            Simplifying network configurations: Elastic IP addresses can simplify network configurations by providing a static IP address that you can use in firewall rules, DNS records, and other network settings.
+            To allocate an Elastic IP address, you can use the Amazon EC2 console or the AWS CLI. Once you have allocated an Elastic IP address, you can associate it with an instance or a network interface.
+            It's important to note that Elastic IP addresses are a regional resource, meaning that they can only be used within the same AWS region where they were allocated.
+
+3. Hands-on:
+    * Use user data to install software and configure settings on an EC2 instance during launch.
+    * Experiment with different placement groups and observe their impact on network performance.
+4. Resources:
+    * AWS EC2 Instance Metadata documentation.
+    * AWS EC2 User Data documentation.
+    * AWS EC2 Placement Groups documentation.
