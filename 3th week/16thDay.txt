@@ -1,0 +1,37 @@
+Day 16:  Elastic Block Store (EBS)
+
+1. EBS Volumes:
+    * Understand different EBS volume types (gp2, gp3, io1, io2, st1, sc1).
+        gp2 (General Purpose SSD)
+            Cost-effective SSD volumes suitable for a wide range of workloads.
+            3 IOPS per GiB (up to 16,000 IOPS) <br> 128 MiB/s throughput per 1,000 IOPS
+            Boot volumes, development and test environments, low-latency interactive applications
+        gp3 (General Purpose SSD)
+            Improved performance and lower cost compared to gp2.
+            3,000 IOPS baseline <br> Up to 16,000 IOPS <br> 125 MiB/s throughput baseline <br> Up to 1,000 MiB/s throughput
+            A wide range of workloads, including web servers, application servers, and databases
+        io1 (Provisioned IOPS SSD)
+            Highest performance SSD volumes designed for mission-critical, latency-sensitive applications.
+            Up to 64,000 IOPS <br> 1,000 MiB/s throughput per 1,000 IOPS
+            Databases, high-performance computing, and other I/O-intensive applications
+        io2 (Provisioned IOPS SSD)
+            Next-generation io1 with higher durability and performance.
+            Up to 64,000 IOPS <br> 1,000 MiB/s throughput per 1,000 IOPS <br> Higher durability than io1
+            I/O-intensive workloads, large databases, and critical applications
+        st1 (Throughput Optimized HDD)
+            Low-cost HDD volumes for frequently accessed, throughput-intensive workloads.
+            Up to 500 MiB/s throughput
+            Data warehousing, log processing, and media streaming
+        sc1 (Cold HDD)
+            Lowest-cost HDD volumes for less frequently accessed data.
+            Up to 250 MiB/s throughput
+            Backups, archives, and infrequently accessed data
+    * Explore EBS snapshots for backups and data transfer.
+    
+2. Hands-on:
+    * Create and attach EBS volumes to an EC2 instance.
+    * Take EBS snapshots and restore volumes from snapshots.
+    * Experiment with different EBS volume types and observe their performance.
+3. Resources:
+    * Amazon EBS documentation.
+    * Amazon EBS FAQs.

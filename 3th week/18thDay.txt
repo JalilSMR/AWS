@@ -1,0 +1,22 @@
+Day 18:  S3 Data Management Features
+
+1. Lifecycle Policies:
+    * Learn to create lifecycle policies to automate data management tasks (e.g., archiving, deleting old objects).
+        Lifecycle policies automate data management tasks in S3. You can create lifecycle rules to transition objects to different storage classes (e.g., Glacier) 
+        or delete them after a certain period. This helps you optimize storage costs and manage your data efficiently.
+2. S3 Transfer Acceleration:
+    * Understand how S3 Transfer Acceleration can improve upload speeds.
+        S3 Transfer Acceleration improves upload speeds to S3 by using Amazon CloudFront's edge network. It's like having a global network of accelerators that help 
+        your data reach S3 faster. This is especially useful for transferring large files or data from geographically distant locations.
+3. Cross-Region Replication:
+    * Explore how to configure cross-region replication for disaster recovery.
+        Cross-region replication can be used for disaster recovery by replicating data to another AWS region. 
+        This ensures that your data is available even if an entire region experiences an outage.
+4. Hands-on:
+    * Create a lifecycle policy to transition objects to Glacier after a certain period.
+    * Enable S3 Transfer Acceleration for your bucket.
+    * Configure cross-region replication for your bucket.
+5. Resources:
+    * Amazon S3 Lifecycle Policies documentation.
+    * Amazon S3 Transfer Acceleration documentation.
+    * Amazon S3 Cross-Region Replication documentation.

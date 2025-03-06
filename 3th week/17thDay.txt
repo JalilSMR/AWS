@@ -1,0 +1,31 @@
+Day 17:  S3 Security and Access Control
+
+1. Access Control Lists (ACLs):
+    * Understand how ACLs work for fine-grained access control to S3 buckets and objects.
+        ACLs allow you to grant granular permissions to specific AWS accounts or predefined groups for S3 buckets and objects.
+        They provide a way to control access at the bucket and object level.
+
+2. Bucket Policies:
+    * Learn to use bucket policies to manage permissions at the bucket level.
+        Bucket policies offer a more flexible way to manage permissions at the bucket level using JSON-based policies.
+        They allow you to define conditions and actions for controlling access to your S3 buckets.
+3. S3 Security Best Practices:
+    * Explore security best practices for S3, including encryption, versioning, and logging.
+        Encryption: Encrypt your data at rest and in transit using server-side encryption with Amazon S3-managed keys (SSE-S3), AWS KMS-managed keys (SSE-KMS), or customer-provided keys (SSE-C). 
+            Encryption protects your data from unauthorized access, even if the storage media is compromised.
+        Versioning: Enable versioning to keep multiple versions of your objects, protecting against accidental deletion or overwriting.
+            Versioning allows you to recover previous versions of your objects if needed.
+        Logging: Enable logging to track access requests to your buckets, providing an audit trail for security analysis.
+            Logging helps you identify suspicious activity and troubleshoot access issues.
+        MFA Delete: Enable MFA Delete to require multi-factor authentication for deleting buckets, adding an extra layer of protection against accidental or malicious deletion. 
+            MFA Delete helps prevent unauthorized deletion of your buckets.
+        Public Access Block: Configure public access block to prevent public access to your buckets and objects, ensuring that only authorized users can access your data.
+            Public access block helps prevent accidental or intentional exposure of your data.
+4. Hands-on:
+    * Configure ACLs and bucket policies to control access to your S3 bucket.
+    * Enable versioning and logging on your S3 bucket.
+    * Experiment with S3 encryption options (SSE-S3, SSE-KMS, SSE-C).
+5. Resources:
+    * Amazon S3 Access Control Lists documentation.
+    * Amazon S3 Bucket Policies documentation.
+    * AWS Security Best Practices for S3.
