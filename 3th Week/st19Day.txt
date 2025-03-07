@@ -1,0 +1,68 @@
+Day 19:  Advanced VPC Configurations
+
+1. Subnet Types
+
+Public Subnet
+Purpose: Hosts resources that need to be accessible from the internet (e.g., web servers).
+
+Key Features
+Has a route to the internet via an Internet Gateway (IGW).
+Typically used for load balancers, NAT instances, or bastion hosts.
+
+Use Case
+Hosting a public-facing application.
+
+Private Subnet
+Purpose: Hosts resources that should not be directly accessible from the internet (e.g., databases, application servers).
+
+Key Features
+Does not have a direct route to the internet.
+Can access the internet through a NAT Gateway or NAT Instance (placed in a public subnet).
+
+Use Case
+Securely hosting backend services.
+
+NAT Gateway Subnet
+Purpose: Provides internet access to resources in private subnets without exposing them to the internet.
+
+Key Features
+A NAT Gateway is placed in a public subnet.
+Private subnets route traffic to the NAT Gateway for outbound internet access.
+
+Use Case
+Allowing private instances to download updates or access external services.
+
+2. Route Tables and Network ACLs
+
+Route Tables
+Purpose: Control the flow of network traffic within a VPC.
+
+Key Concepts:
+Each subnet is associated with a route table.
+Route tables contain routes that define where traffic is directed (e.g., to an IGW, NAT Gateway, or another subnet).
+Default Route Table: Automatically created with the VPC and used if no custom route table is associated with a subnet.
+
+Use Case:
+Directing traffic from a public subnet to the internet or from a private subnet to a NAT Gateway.
+
+Network ACLs (NACLs)
+Purpose: Provide stateless packet filtering at the subnet level.
+
+Key Concepts:
+NACLs are optional and act as a firewall for controlling inbound and outbound traffic.
+Rules are evaluated in order (from lowest to highest rule number).
+Each rule can allow or deny traffic based on IP addresses, ports, and protocols.
+NACLs are stateless, meaning you must explicitly define rules for both inbound and outbound traffic.
+
+Use Case:
+Adding an extra layer of security to subnets (e.g., blocking specific IP ranges).
+
+3. Hands-on:
+Create a VPC with public and private subnets.
+Launch EC2 instances in different subnets.
+Configure route tables and network ACLs to control traffic flow.
+
+4. Resources:
+    * Amazon VPC Subnets documentation. https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html
+    * Amazon VPC Route Tables documentation. https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
+    * Amazon VPC Network ACLs documentation.  https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
