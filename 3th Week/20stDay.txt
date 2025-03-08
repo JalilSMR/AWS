@@ -1,0 +1,79 @@
+Day 20: Introduction to the AWS Well-Architected Framework
+
+1. Six Pillars
+
+Operational Excellence
+Focuses on running and monitoring systems to deliver business value and continuously improving processes and procedures.
+Key topics: Automation, incident management, and operational readiness.
+
+Security
+Ensures the protection of information and systems through security best practices.
+Key topics: Identity and access management, threat detection, data protection, and incident response.
+
+Reliability
+Ensures workloads perform their intended functions correctly and consistently, even when failures occur.
+Key topics: Fault tolerance, recovery planning, and scalability.
+
+Performance Efficiency
+Focuses on using computing resources efficiently to meet system requirements and maintain efficiency as demand changes.
+Key topics: Right-sizing, monitoring, and selecting the appropriate resource types.
+
+Cost Optimization
+Aims to avoid unnecessary costs and maximize the value of your cloud investment.
+Key topics: Cost-effective resources, demand management, and optimizing over time.
+
+Sustainability Pillar
+The Sustainability Pillar emphasizes designing and operating workloads to reduce energy consumption and improve resource utilization, aligning with environmental best practices
+
+2. Design Principles
+
+Operational Excellence
+Perform operations as code.
+Make frequent, small, reversible changes.
+Refine operations procedures frequently.
+Anticipate failure.
+Learn from all operational failures.
+
+Security
+Implement a strong identity foundation.
+Enable traceability.
+Apply security at all layers.
+Automate security best practices.
+Protect data in transit and at rest.
+Prepare for security events.
+
+Reliability
+Test recovery procedures.
+Automatically recover from failure.
+Scale horizontally to increase workload availability.
+Stop guessing capacity.
+Manage change in automation.
+
+Performance Efficiency
+Democratize advanced technologies.
+Go global in minutes.
+Use serverless architectures.
+Experiment more often.
+Consider mechanical sympathy (align technology with workload needs).
+
+Cost Optimization
+Adopt a consumption model.
+Measure overall efficiency.
+Stop spending money on undifferentiated heavy lifting.
+Analyze and attribute expenditure.
+Use managed services to reduce cost of ownership.
+
+Sustainability
+Understand Your Workload's Environmental Impact
+Maximize Resource Efficiency
+Use Managed Services
+Design for Energy Proportionality
+Reduce the Impact of Data
+
+3. Hands-on:
+Review the Well-Architected Framework whitepaper.
+Start thinking about how the framework applies to your mini-project from Week 2.
+
+4. Resources:
+AWS Well-Architected Framework whitepaper. https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc&wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&wa-guidance-whitepapers.sort-order=desc
+AWS Well-Architected Tool. https://aws.amazon.com/well-architected-tool/
