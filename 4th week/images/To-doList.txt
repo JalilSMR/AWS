@@ -1,0 +1,108 @@
+AWS Certified Solutions Architect Professional - Phase 1 - Week 4 To-Do List
+
+Overall Goal:  Expand your knowledge of essential AWS services, focusing on database services,  basic automation with the AWS CLI, and further exploration of the Well-Architected Framework.
+
+Daily/Ongoing Tasks:
+
+* Active Recall: Continue practicing active recall for all topics.
+* Spaced Repetition: Use spaced repetition to reinforce learning.
+* AWS Free Tier Exploration:  Explore new AWS services and features in the Free Tier.
+
+Week 4 To-Do List:
+
+Day 22: Introduction to Amazon RDS
+
+1. RDS Concepts:
+    * Understand what Amazon RDS is and its benefits.
+    * Learn about different RDS database engines (MySQL, PostgreSQL, SQL Server, Oracle, etc.).
+    * Explore RDS features like automated backups, point-in-time recovery, and read replicas.
+2. Hands-on:
+    * Launch an RDS instance with a MySQL database engine.
+    * Connect to the database instance and perform basic SQL operations.
+    * Create a read replica of your RDS instance.
+3. Resources:
+    * Amazon RDS documentation.
+    * Amazon RDS FAQs.
+
+Day 23:  RDS Security and Management
+
+1. Security Groups and Parameter Groups:
+    * Understand how security groups control network access to RDS instances.
+    * Learn about parameter groups for customizing database configurations.
+2. Database Backups and Recovery:
+    * Explore automated backups and manual snapshots for RDS instances.
+    * Learn how to restore an RDS instance from a backup or snapshot.
+3. Hands-on:
+    * Configure security groups for your RDS instance.
+    * Create a parameter group and modify database parameters.
+    * Take a manual snapshot of your RDS instance and restore from it.
+4. Resources:
+    * Amazon RDS Security Groups documentation.
+    * Amazon RDS Parameter Groups documentation.
+    * Amazon RDS Backups and Recovery documentation.
+
+Day 24: Introduction to DynamoDB
+
+1. DynamoDB Concepts:
+    * Understand what Amazon DynamoDB is and its use cases.
+    * Learn about DynamoDB tables, items, and attributes.
+    * Explore DynamoDB features like key-value storage, indexing, and scalability.
+2. Hands-on:
+    * Create a DynamoDB table.
+    * Add and retrieve items from the table.
+    * Experiment with different DynamoDB data types and indexing options.
+3. Resources:
+    * Amazon DynamoDB documentation.
+    * Amazon DynamoDB FAQs.
+
+Day 25:  DynamoDB Advanced Features
+
+1. DynamoDB Streams:
+    * Understand how DynamoDB Streams can capture data modifications.
+    * Learn about use cases for DynamoDB Streams (e.g., triggers, analytics).
+2. DynamoDB Global Tables:
+    * Explore how to create globally distributed DynamoDB tables for low latency and high availability.
+3. Hands-on:
+    * Enable DynamoDB Streams on your table and explore the stream data.
+    * (Optional) Create a DynamoDB Global Table (may incur costs).
+4. Resources:
+    * Amazon DynamoDB Streams documentation.
+    * Amazon DynamoDB Global Tables documentation.
+
+Day 26: Introduction to the AWS CLI
+
+1. AWS CLI Installation and Configuration:
+    * Install the AWS CLI on your local machine or VM.
+    * Configure the AWS CLI with your AWS credentials.
+2. Basic Commands:
+    * Learn basic AWS CLI commands for interacting with different services (e.g., `aws s3 ls`, `aws ec2 describe-instances`).
+3. Hands-on:
+    * Use the AWS CLI to manage S3 buckets, EC2 instances, and RDS instances.
+    * Experiment with different command options and parameters.
+4. Resources:
+    * AWS Command Line Interface documentation.
+    * AWS CLI Command Reference.
+
+Day 27:  AWS CLI Automation
+
+1. Scripting with the AWS CLI:
+    * Learn how to use shell scripts or other scripting languages to automate AWS CLI commands.
+2. Use Cases for Automation:
+    * Explore common use cases for AWS CLI automation (e.g., resource provisioning, backups, monitoring).
+3. Hands-on:
+    * Write a simple shell script to automate an AWS task (e.g., creating an S3 bucket, launching an EC2 instance).
+4. Resources:
+    * AWS CLI examples and tutorials.
+
+Day 28:  Well-Architected Framework Deep Dive and Review
+
+1. Well-Architected Review:
+    * Conduct a Well-Architected review of your Week 2 mini-project.
+    * Identify potential areas for improvement in each of the five pillars.
+2. Documentation:
+    * Document your findings and recommendations from the Well-Architected review.
+3. Review:
+    * Review all topics covered during the week.
+    * Prepare for the next phase of your learning journey, focusing on building and deploying applications on AWS.
+
+This week expands your knowledge of key AWS services and introduces you to the power of the AWS CLI for automation.  Continue to apply your learning through hands-on practice and the Well-Architected Framework.
