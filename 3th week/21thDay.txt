@@ -1,0 +1,18 @@
+Review
+Review all topics covered during the week.
+Revisit the basic web server you set up in Week 2 and identify areas for improvement.
+Project Enhancement
+Apply your knowledge from this week to enhance the security and functionality of your web server.
+Consider:
+Implementing EBS volumes for storage: Replace the instance store with an EBS volume for persistent storage. This ensures that your data is not lost if the instance is terminated.
+Using S3 for website backups: Configure automated backups of your website files to S3. This provides a secure and durable backup solution.
+Optimizing your VPC configuration: Use separate subnets for different tiers of your application (e.g., web servers, databases). This enhances security and network performance.
+Applying Well-Architected Framework principles: Review your web server architecture against the five pillars and identify areas for improvement.
+Proof: Take screenshots of your enhanced web server configuration, EBS volume setup, S3 backup configuration, and any other improvements you make.
+Linux Troubleshooting Exercises
+Here are some basic troubleshooting exercises that you can perform on your Linux instances:
+Check disk usage: Use the df -h command to display disk usage information for mounted partitions. This helps you identify if you're running out of disk space.
+Identify hanging processes: Use the ps aux | grep <process_name> command to find processes that might be consuming excessive resources or causing issues. You can then use the kill command to terminate these processes.
+Troubleshoot network connectivity: Use the ping command to test connectivity to a remote host. If you're unable to ping a host, use the traceroute command to trace the path that packets take to reach the host and identify any network issues along the way.
+Resources
+Linux Troubleshooting documentation

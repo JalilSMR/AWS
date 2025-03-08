@@ -1,0 +1,22 @@
+Day 20: Introduction to the AWS Well-Architected Framework
+
+1. Five Pillars:
+    * Learn about the five pillars of the Well-Architected Framework:
+        Operational Excellence: This pillar focuses on running and monitoring systems to deliver business value and continually improve supporting processes. 
+            It includes best practices for automating operations, monitoring systems, and responding to incidents.
+        Security: This pillar emphasizes protecting information and systems. It includes best practices for implementing a strong security strategy, 
+            controlling access to resources, and protecting data.
+        Reliability: This pillar addresses the ability of a system to recover from disruptions, acquire computing resources to meet demand, and mitigate disruptions. 
+            It includes best practices for designing fault-tolerant architectures, implementing disaster recovery plans, and testing systems for resilience.
+        Performance Efficiency: This pillar focuses on using computing resources efficiently to meet system requirements and maintaining that efficiency as demand changes.
+            It includes best practices for selecting the right instance types, optimizing storage, and monitoring performance.
+        Cost Optimization: This pillar emphasizes avoiding unnecessary costs. It includes best practices for choosing the right pricing models, monitoring spending, 
+            and optimizing resource utilization.
+2. Design Principles:
+    * Understand the design principles for each pillar.
+3. Hands-on:
+    * Review the Well-Architected Framework whitepaper.
+    * Start thinking about how the framework applies to your mini-project from Week 2.
+4. Resources:
+    * AWS Well-Architected Framework whitepaper.
+    * AWS Well-Architected Tool.
