@@ -1,0 +1,12 @@
+Day 21:  Review and Project Enhancement
+
+1. Review:
+    * Review all topics covered during the week.
+    * Revisit the Week 2 mini-project and identify areas for improvement.
+2. Project Enhancement:
+    * Apply your knowledge from this week to enhance the security and functionality of your web server project.
+    * Consider:
+        * Implementing EBS volumes for storage.
+        * Using S3 for website backups.
+        * Optimizing your VPC configuration.
+        * Applying Well-Architected Framework principles.
