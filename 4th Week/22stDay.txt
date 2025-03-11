@@ -1,0 +1,38 @@
+Day 22: Introduction to Amazon RDS
+
+1. RDS Concepts
+
+Amazon RDS is a managed relational database service that supports multiple database engines.
+It automates time-consuming tasks like hardware provisioning, database setup, patching, and backups, allowing you to focus on your applications.
+
+Benefits of Amazon RDS
+Managed Service: AWS handles database administration tasks.
+Scalability: Easily scale compute and storage resources.
+High Availability: Multi-AZ deployments for fault tolerance.
+Automated Backups: Point-in-time recovery and automated backups.
+Security: Encryption at rest and in transit, IAM integration, and VPC support.
+Cost-Effective: Pay-as-you-go pricing with no upfront costs.
+
+Supported Database Engines:
+MySQL
+PostgreSQL
+MariaDB
+Oracle
+SQL Server
+Amazon Aurora (AWS's proprietary database engine compatible with MySQL and PostgreSQL)
+
+Key Features
+Automated Backups: Daily backups and transaction logs for point-in-time recovery.
+Read Replicas: Improve read scalability by creating replicas of your primary database.
+Multi-AZ Deployments: Enhance availability by replicating data to a standby instance in another Availability Zone.
+Monitoring and Metrics: Use Amazon CloudWatch to monitor database performance.
+Patching and Updates: Automated patching for the database engine.
+
+2. Hands-on
+Launch an RDS instance with a MySQL database engine.
+Connect to the database instance and perform basic SQL operations.
+Create a read replica of your RDS instance.
+
+3. Resources
+Amazon RDS documentation. https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+Amazon RDS FAQs. https://aws.amazon.com/rds/faqs/
