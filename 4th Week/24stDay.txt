@@ -1,0 +1,38 @@
+Day 24: Introduction to DynamoDB
+
+1. DynamoDB Concepts
+
+What is Amazon DynamoDB?
+
+Fully Managed: DynamoDB is a serverless database, meaning AWS handles infrastructure provisioning, maintenance, and scaling.
+NoSQL Database: It is a non-relational database that stores data in a key-value and document format.
+High Performance: DynamoDB provides single-digit millisecond latency for read/write operations.
+Scalability: It automatically scales to handle large volumes of traffic and data.
+
+Use Cases:
+Real-time applications (e.g., gaming, ad tech).
+Session management.
+IoT data storage.
+E-commerce applications (e.g., shopping carts, product catalogs).
+
+Key Components
+Tables: The fundamental data structure in DynamoDB. A table is a collection of items.
+Items: A single data record in a table, similar to a row in a relational database. Each item is a collection of attributes.
+Attributes: Key-value pairs that represent the data fields of an item (e.g., UserID, Name, Email).
+
+Features
+Key-Value Storage: DynamoDB stores data as key-value pairs, where the primary key uniquely identifies each item.
+Indexing
+Primary Key: Can be a single attribute (Partition Key) or a composite key (Partition Key + Sort Key).
+Secondary Indexes: Allow querying on non-primary key attributes (Local Secondary Indexes and Global Secondary Indexes).
+Scalability: DynamoDB automatically partitions data across multiple servers to handle large datasets and high request rates.
+Durability and Availability: Data is replicated across multiple Availability Zones for fault tolerance.
+
+2. Hands-on
+Create a DynamoDB table.
+Add and retrieve items from the table.
+Experiment with different DynamoDB data types and indexing options.
+
+3. Resources
+Amazon DynamoDB documentation. https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html
+Amazon DynamoDB FAQs. https://aws.amazon.com/dynamodb/faqs/
