@@ -1,0 +1,48 @@
+Day 25:  DynamoDB Advanced Features
+
+1. DynamoDB Streams
+
+What are DynamoDB Streams?
+
+DynamoDB Streams is a feature that captures time-ordered changes (inserts, updates, and deletes) made to items in a DynamoDB table.
+Each change is recorded as a stream record, which contains information about the modification (e.g., old and new values of the item).
+Streams are useful for building event-driven applications and real-time data processing pipelines.
+
+Key Concepts
+Stream Records: A sequence of changes made to items in a table.
+Shards: Stream records are grouped into shards for scalability and parallel processing.
+Event Source Mapping: Used to connect DynamoDB Streams to AWS Lambda for automatic triggering.
+
+Use Cases
+Real-Time Triggers: Trigger AWS Lambda functions to process changes (e.g., send notifications, update related data).
+
+Data Replication: Replicate data to other systems (e.g., Elasticsearch for search and analytics).
+Audit Logs: Maintain an audit trail of all changes made to a table.
+Analytics: Stream data to analytics tools (e.g., Amazon Kinesis, Amazon Redshift) for real-time insights.
+
+2. DynamoDB Global Tables
+
+What are DynamoDB Global Tables?
+
+DynamoDB Global Tables enable you to create globally distributed, multi-region tables.
+Data is automatically replicated across multiple AWS regions, providing low-latency access and high availability.
+Global Tables are ideal for applications with a global user base.
+
+Key Features
+Multi-Region Replication: Data is replicated across multiple AWS regions in near real-time.
+Automatic Conflict Resolution: DynamoDB uses a last-writer-wins policy to resolve conflicts.
+Low Latency: Users can read and write data to the nearest region, reducing latency.
+High Availability: If one region becomes unavailable, the application can failover to another region.
+
+Use Cases
+Global Applications: Serve users from the nearest region for faster performance.
+Disaster Recovery: Ensure data availability even during regional outages.
+Compliance: Store data in specific regions to meet regulatory requirements.
+    
+3. Hands-on:
+Enable DynamoDB Streams on your table and explore the stream data.
+(Optional) Create a DynamoDB Global Table (may incur costs).
+
+4. Resources:
+Amazon DynamoDB Streams documentation. https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
+Amazon DynamoDB Global Tables documentation. https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html
