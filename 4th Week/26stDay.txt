@@ -1,0 +1,32 @@
+Day 26: Introduction to the AWS CLI
+
+1. AWS CLI Installation and Configuration
+
+Configure the AWS CLI
+aws configure
+AWS Access Key ID: YOUR_ACCESS_KEY
+AWS Secret Access Key: YOUR_SECRET_KEY
+Default region name: us-east-1
+Default output format: json
+
+Verify the configuration:
+aws sts get-caller-identity
+
+2. Basic Commands
+List all S3 buckets: aws s3 ls
+Create a new bucket: aws s3 mb s3://my-new-bucket
+Copy files to a bucket: aws s3 cp myfile.txt s3://my-new-bucket/
+List all EC2 instances: aws ec2 describe-instances
+Start an EC2 instance: aws ec2 start-instances --instance-ids i-1234567890abcdef0
+Stop an EC2 instance: aws ec2 stop-instances --instance-ids i-1234567890abcdef0
+List all RDS instances: aws rds describe-db-instances
+Create an RDS instance: aws rds create-db-instance --db-instance-identifier mydbinstance --db-instance-class db.
+t2.micro --engine mysql --master-username admin --master-user-password password
+    
+3. Hands-on
+Use the AWS CLI to manage S3 buckets, EC2 instances, and RDS instances.
+Experiment with different command options and parameters.
+
+4. Resources
+AWS Command Line Interface documentation. https://docs.aws.amazon.com/cli/
+AWS CLI Command Reference. https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
