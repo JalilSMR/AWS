@@ -1,0 +1,14 @@
+Day 28:  Well-Architected Framework Deep Dive and Review
+
+1. Well-Architected Review:
+Conduct a Well-Architected review of your Week 2 mini-project.
+Identify potential areas for improvement in each of the five pillars.
+
+2. Documentation:
+Document your findings and recommendations from the Well-Architected review.
+
+3. Review:
+Review all topics covered during the week.
+Prepare for the next phase of your learning journey, focusing on building and deploying applications on AWS.
+
+This week expands your knowledge of key AWS services and introduces you to the power of the AWS CLI for automation.  Continue to apply your learning through hands-on practice and the Well-Architected Framework.
