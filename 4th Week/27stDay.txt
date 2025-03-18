@@ -1,0 +1,41 @@
+Day 27:  AWS CLI Automation
+
+1. Scripting with the AWS CLI
+
+The AWS CLI is a powerful tool that allows you to interact with AWS services from the command line. By combining it with scripting languages like Bash, Python, or PowerShell, you can automate repetitive tasks.
+
+Key Concepts:
+AWS CLI Basics: Ensure you have the AWS CLI installed and configured (aws configure).
+Shell Scripting: Use Bash (Linux/macOS) or PowerShell (Windows) to write scripts.
+Output Handling: Use --query and --output flags to filter and format CLI output.
+Error Handling: Use conditional statements to handle errors in scripts.
+
+2. Use Cases for Automation
+
+Here are some common scenarios where AWS CLI automation can be useful:
+
+Resource Provisioning:
+Automate the creation of AWS resources like EC2 instances, S3 buckets, RDS databases, etc.
+Example: Spin up a development environment with predefined configurations.
+
+Backups:
+Automate backups for EBS volumes, RDS snapshots, or S3 bucket data.
+Example: Schedule daily backups of critical data.
+
+Monitoring:
+Automate the collection of CloudWatch metrics or logs.
+Example: Send alerts when CPU usage exceeds a threshold.
+
+Cost Management:
+Automate cost reporting or resource cleanup to avoid unnecessary charges.
+Example: Delete unused resources at the end of the day.
+
+Scaling:
+Automate scaling of EC2 instances or ECS services based on demand.
+Example: Scale out during peak hours and scale in during off-peak hours.
+
+3. Hands-on
+Write a simple shell script to automate an AWS task (e.g., creating an S3 bucket, launching an EC2 instance).
+
+4. Resources
+AWS CLI examples and tutorials. https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
