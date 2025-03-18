@@ -1,0 +1,192 @@
+Proyecto 1: Implementación de una Arquitectura Multi-Cuenta y Multi-Región para "TechCorp Global"
+
+1. Objetivos del Proyecto (Nivel Ejecutivo)
+
+Contexto Empresarial: TechCorp Global es una empresa de tecnología en rápido crecimiento con equipos de desarrollo, operaciones y seguridad distribuidos geográficamente. Necesitan una infraestructura en AWS que sea:
+
+Escalable: Capaz de soportar el crecimiento futuro de la empresa.
+Segura: Que proteja los datos y aplicaciones de la empresa, cumpliendo con las normativas de la industria.
+Eficiente: Que permita a los equipos trabajar de forma independiente y ágil, sin cuellos de botella.
+Controlada: Con una gestión centralizada de costos, políticas y auditoría.
+Resiliente: Con alta disponibilidad y recuperación ante desastres.
+Objetivos Técnicos:
+
+Diseñar e implementar una arquitectura multi-cuenta en AWS utilizando AWS Organizations.
+Establecer una estructura de cuentas que separe los entornos de desarrollo, pruebas y producción.
+Implementar políticas de control de servicios (SCPs) para garantizar el cumplimiento de las políticas de seguridad de la empresa.
+Configurar el inicio de sesión único (SSO) para simplificar el acceso de los usuarios a las diferentes cuentas.
+Implementar un sistema centralizado de registro de auditoría y monitoreo.
+Establecer una estrategia de red que permita la conectividad entre cuentas y con el entorno on-premise (si es necesario).
+Demostrar la capacidad de delegar responsabilidades administrativas a los equipos de cada cuenta.
+Alineación con el Examen:
+
+Dominio 1 (Diseño para la Complejidad Organizacional): Este proyecto aborda directamente este dominio al diseñar una solución para una organización compleja con múltiples equipos y requisitos de seguridad y cumplimiento.
+Dominio 5 (Mejora Continua): La estructura multi-cuenta sienta las bases para futuras mejoras y expansiones.
+2. Arquitectura Propuesta
+
+Diagrama de Arquitectura (Usa una herramienta profesional como Lucidchart o Draw.io):
+
+[Organización AWS - TechCorp Global]
+    |
+    +-- Cuenta de Administración (Master Account)
+    |     |
+    |     +-- AWS Organizations (Configuración, SCPs)
+    |     +-- AWS IAM Identity Center (SSO)
+    |     +-- AWS CloudTrail (Auditoría centralizada)
+    |     +-- AWS Config (Reglas de conformidad centralizadas)
+    |     +-- AWS Control Tower (Landing Zone - Opcional)
+    |
+    +-- Unidades Organizativas (OUs)
+    |     |
+    |     +-- OU de Infraestructura Compartida
+    |     |     |
+    |     |     +-- Cuenta de Red
+    |     |     |     |
+    |     |     |     +-- VPCs (Transit Gateway/VPC Peering)
+    |     |     |     +-- Direct Connect/VPN Gateway
+    |     |     |
+    |     |     +-- Cuenta de Seguridad
+    |     |           |
+    |     |           +-- Herramientas de seguridad (GuardDuty, Security Hub, etc.)
+    |     |
+    |     +-- OU de Entornos
+    |           |
+    |           +-- Cuenta de Desarrollo
+    |           |     |
+    |           |     +-- VPC de Desarrollo
+    |           |     +-- Recursos de Desarrollo (EC2, RDS, S3, etc.)
+    |           |     +-- Roles IAM para desarrolladores
+    |           |
+    |           +-- Cuenta de Pruebas
+    |           |     |
+    |           |     +-- VPC de Pruebas
+    |           |     +-- Recursos de Pruebas
+    |           |     +-- Roles IAM para testers
+    |           |
+    |           +-- Cuenta de Producción
+    |                 |
+    |                 +-- VPC de Producción (Multi-AZ, Multi-Región)
+    |                 +-- Recursos de Producción (EC2, RDS, S3, etc.)
+    |                 +-- Roles IAM con permisos mínimos
+    |
+    +-- (Opcional) OU de Sandbox (para experimentación)
+Descripción Detallada de la Arquitectura:
+
+AWS Organizations: La base de la arquitectura multi-cuenta. Permite crear y administrar todas las cuentas de AWS de la organización de forma centralizada.
+Cuenta de Administración (Master Account): La cuenta principal desde la que se gestiona AWS Organizations. Se utiliza solo para tareas administrativas de la organización. No se despliegan cargas de trabajo en esta cuenta.
+Unidades Organizativas (OUs): Agrupan cuentas con funciones similares. Esto permite aplicar políticas (SCPs) de forma coherente.
+OU de Infraestructura Compartida: Contiene cuentas para servicios compartidos:
+Cuenta de Red: Gestiona la conectividad de red (VPCs, subredes, gateways, Direct Connect/VPN). Se puede usar Transit Gateway o VPC Peering para conectar las VPCs de las diferentes cuentas.
+Cuenta de Seguridad: Centraliza las herramientas de seguridad (AWS GuardDuty, AWS Security Hub, etc.). Permite una supervisión centralizada de la seguridad de toda la organización.
+OU de Entornos: Contiene cuentas separadas para cada entorno (desarrollo, pruebas, producción). Esto aísla los entornos y evita que cambios en un entorno afecten a otros.
+Cada cuenta de entorno tiene su propia VPC y sus propios recursos.
+Se utilizan roles IAM con diferentes niveles de permisos para cada entorno. Los desarrolladores tienen acceso completo a la cuenta de desarrollo, pero acceso limitado (o nulo) a la cuenta de producción.
+AWS IAM Identity Center (SSO): Permite a los usuarios acceder a todas las cuentas de AWS a las que tienen permiso con un solo conjunto de credenciales. Se integra con el directorio de usuarios existente de TechCorp (por ejemplo, Active Directory).
+AWS CloudTrail: Se configura en la cuenta de administración para registrar todas las llamadas a la API de AWS realizadas en todas las cuentas de la organización. Proporciona una pista de auditoría completa. Los logs se almacenan en un bucket de S3 en la cuenta de administración.
+AWS Config: Se configura en la cuenta de administración para definir reglas de conformidad y evaluar la configuración de los recursos de AWS en todas las cuentas. Permite detectar y corregir configuraciones no conformes.
+Políticas de Control de Servicios (SCPs): Se aplican a nivel de OU para establecer límites máximos de permisos que se pueden otorgar en las cuentas. Por ejemplo, se puede usar una SCP para evitar que se creen instancias EC2 de ciertos tipos en la cuenta de desarrollo, o para forzar el uso de cifrado en los buckets de S3 en todas las cuentas.
+AWS Control Tower (Opcional pero Recomendado): Simplifica la configuración inicial de un entorno multi-cuenta bien diseñado. Crea una "landing zone" con cuentas preconfiguradas, OUs, SCPs y configuraciones de seguridad. Es ideal para acelerar la implementación.
+Multi-Región: El diagrama indica "Multi-Región" en la cuenta de Producción. Esto significa que, para alta disponibilidad y recuperación ante desastres, la infraestructura de producción se replicará en otra región de AWS. Se utilizarán servicios como Route 53 (con health checks y failover), RDS Multi-AZ (con réplicas de lectura en otra región), y replicación de datos entre regiones (por ejemplo, replicación cross-region de S3).
+3. Implementación (Paso a Paso - Nivel Detallado)
+
+Esta sección sería muy extensa si incluyéramos todos los comandos y capturas de pantalla.  En un portafolio real, incluirías todos los detalles. Aquí te daré los pasos principales y algunos ejemplos de comandos y configuraciones.
+
+Paso 1: Configuración de AWS Organizations y la Cuenta de Administración:
+
+Crear una nueva cuenta de AWS que será la cuenta de administración (si no se tiene ya una).
+Habilitar AWS Organizations en la cuenta de administración.
+Crear las Unidades Organizativas (OUs) descritas en la arquitectura.
+Crear las cuentas de AWS para cada entorno y para los servicios compartidos. Se pueden crear manualmente o a través de la API de Organizations. Es mejor crearlas desde Organizations, para que queden automáticamente vinculadas.
+aws organizations create-account --email <correo> --account-name <nombre>
+Mover las cuentas a sus respectivas OUs.
+Configurar AWS IAM Identity Center (SSO) en la cuenta de administración.
+Integrar SSO con el proveedor de identidad existente de TechCorp (si lo hay).
+Crear usuarios y grupos en SSO.
+Asignar permisos a los usuarios y grupos para acceder a las diferentes cuentas de AWS.
+Habilitar AWS CloudTrail en la cuenta de administración.
+Crear un trail que registre la actividad de todas las cuentas de la organización.
+Configurar un bucket de S3 en la cuenta de administración para almacenar los logs de CloudTrail.
+aws cloudtrail create-trail --name <nombre> --s3-bucket-name <bucket> --is-multi-region-trail --include-global-service-events
+Habilitar AWS Config en la cuenta de administración.
+Configurar reglas de conformidad (por ejemplo, reglas para verificar que los buckets de S3 no sean públicos, que las instancias EC2 usen un tipo de instancia aprobado, etc.).
+aws configservice subscribe --s3-bucket <bucket>
+Crear Políticas de Control de Servicios (SCPs) y aplicarlas a las OUs.
+Ejemplo de SCP para denegar la creación de instancias EC2 que no sean de tipo t2 o t3 en la OU de Desarrollo:
+JSON
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyEC2InstancesNotT2OrT3",
+      "Effect": "Deny",
+      "Action": "ec2:RunInstances",
+      "Resource": "arn:aws:ec2:*:*:instance/*",
+      "Condition": {
+        "StringNotLike": {
+          "ec2:InstanceType": [
+            "t2.*",
+            "t3.*"
+          ]
+        }
+      }
+    }
+  ]
+}
+aws organizations create-policy --content file://policy.json --description "Deny EC2..." --name DenyEC2NotT2OrT3 --type SERVICE_CONTROL_POLICY
+aws organizations attach-policy --policy-id <id> --target-id <ou-id>
+Paso 2: Configuración de la Cuenta de Red:
+
+Crear una VPC en la cuenta de Red.
+Configurar subredes (públicas y privadas) en múltiples zonas de disponibilidad.
+Configurar tablas de rutas, gateways de Internet, NAT gateways, etc.
+Configurar la conectividad entre las VPCs de las diferentes cuentas (usando Transit Gateway o VPC Peering).
+Transit Gateway (Recomendado para arquitecturas más grandes):
+Crear un Transit Gateway en la cuenta de Red.
+Crear attachments de Transit Gateway para cada VPC que se va a conectar.
+Configurar las tablas de rutas para dirigir el tráfico a través del Transit Gateway.
+VPC Peering (Para arquitecturas más pequeñas):
+Crear una conexión de VPC Peering entre la VPC de la cuenta de Red y la VPC de cada otra cuenta.
+Aceptar la solicitud de peering en la cuenta de destino.
+Configurar las tablas de rutas en cada VPC para dirigir el tráfico a través de la conexión de peering.
+Configurar la conectividad con el entorno on-premise (si es necesario) usando Direct Connect o VPN.
+Paso 3: Configuración de las Cuentas de Entorno (Desarrollo, Pruebas, Producción):
+
+En cada cuenta de entorno:
+Crear una VPC con una configuración similar a la de la cuenta de Red (pero adaptada al entorno específico).
+Crear los recursos necesarios para el entorno (instancias EC2, bases de datos RDS, buckets de S3, etc.).
+Crear roles IAM con los permisos adecuados para los usuarios y servicios del entorno. Aplicar el principio de mínimo privilegio.
+Asegurarse de que las VPCs de los entornos están conectadas correctamente a través de Transit Gateway o VPC Peering.
+Paso 4: Configuración de la Cuenta de Seguridad:
+
+Habilitar AWS GuardDuty y AWS Security Hub.
+Configurar las herramientas para que envíen alertas a la cuenta de administración (por ejemplo, a través de SNS).
+Paso 5: Automatización con CloudFormation (Infraestructura como Código):
+
+Convertir la infraestructura definida en los pasos anteriores en plantillas de CloudFormation. Esto permite automatizar el despliegue y la gestión de la infraestructura.
+Crear stacks separados para la infraestructura de red, la infraestructura de cada entorno, la configuración de seguridad, etc.
+Utilizar parámetros y condicionales en las plantillas para hacerlas más flexibles.
+Utilizar un sistema de control de versiones (Git) para gestionar las plantillas.
+4. Pruebas y Validación
+
+Pruebas de Acceso: Verificar que los usuarios pueden acceder a las diferentes cuentas de AWS a través de SSO con los permisos correctos. Probar que los usuarios de desarrollo no pueden acceder a recursos de producción.
+Pruebas de SCPs: Intentar realizar acciones que estén prohibidas por las SCPs (por ejemplo, crear una instancia EC2 de un tipo no permitido). Verificar que la acción es denegada.
+Pruebas de Auditoría: Realizar acciones en diferentes cuentas y verificar que se registran en los logs de CloudTrail en la cuenta de administración.
+Pruebas de Conformidad: Verificar que los recursos de AWS cumplen con las reglas de conformidad definidas en AWS Config.
+Pruebas de Red: Verificar la conectividad entre las VPCs de las diferentes cuentas y con el entorno on-premise (si es necesario).
+Pruebas de Aplicación: Desplegar una aplicación de prueba en cada entorno y verificar que funciona correctamente.
+Pruebas Multi-Región (para Producción): Simular un fallo en la región principal y verificar que la infraestructura en la región secundaria se activa correctamente.
+5. Optimización y Mejoras
+
+Automatización Avanzada: Implementar un pipeline de CI/CD para automatizar el despliegue de la infraestructura y las aplicaciones.
+Monitoreo Avanzado: Configurar dashboards personalizados en CloudWatch para monitorizar métricas clave. Implementar alertas proactivas.
+Optimización de Costos: Utilizar Cost Explorer para analizar el gasto y encontrar oportunidades de optimización. Implementar políticas de ciclo de vida de S3, utilizar instancias reservadas o Spot, etc.
+Resiliencia: Implementar estrategias de backup y recuperación ante desastres.
+Seguridad: Implementar medidas de seguridad adicionales, como AWS WAF, AWS Shield, etc. Realizar evaluaciones de seguridad periódicas.
+Landing Zone (Control Tower): Si se empezó sin Control Tower, evaluar la posibilidad de migrar a una Landing Zone de Control Tower para simplificar la gestión y mejorar la seguridad.
+6. Conclusiones (Aprendizajes Clave)
+
+Resumir los principales beneficios de la arquitectura multi-cuenta implementada.
+Destacar los desafíos encontrados durante el proyecto y cómo se resolvieron.
+Mencionar las habilidades de AWS adquiridas durante el proyecto.
+Reflexionar sobre cómo este proyecto te prepara para el examen de certificación y para un rol de Solutions Architect.

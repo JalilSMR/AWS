@@ -1,0 +1,54 @@
+Day 22: Introduction to Amazon RDS
+Amazon Relational Database Service (Amazon RDS) simplifies setting up, operating, and scaling relational databases in the AWS Cloud. With RDS, 
+you can offload the complexities of database management, such as patching, backups, and high availability, to AWS and focus on building your applications.
+
+Understanding Cloud Service Models: IaaS, PaaS, and SaaS
+Before diving deeper into RDS, it's essential to understand the different cloud service models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), 
+    and Software as a Service (SaaS).
+IaaS: Provides you with the basic building blocks for cloud IT, offering access to networking features, computers (virtual or dedicated hardware), and data storage space. 
+    You manage the operating system, middleware, runtime, and data. Amazon EC2 is an example of IaaS.
+PaaS: Provides a cloud environment for developing, running, and managing applications. You bring your code and data, and the provider handles the underlying infrastructure, 
+    including the operating system, middleware, and runtime. Amazon RDS is an example of PaaS.
+SaaS: Provides you with a complete software solution that you access over the internet. You use the provider's application, running on their infrastructure, 
+    and they manage everything, including the application, runtime, middleware, operating system, virtualization, servers, storage, and networking. 
+    A work email account is an example of SaaS.
+1. RDS Concepts:
+    * Understand what Amazon RDS is and its benefits.
+        RDS Concepts
+        Managed Service: RDS takes care of time-consuming database administration tasks, allowing you to focus on application development.
+        Supported Engines: RDS supports popular database engines like MySQL, PostgreSQL, SQL Server, Oracle, MariaDB, and Amazon Aurora. 
+            Choose the engine that best suits your application's needs and your existing expertise1.
+        Key Features:
+        Automated Backups: RDS automatically backs up your database, ensuring data protection and recovery.
+        Point-in-Time Recovery (PITR): Restore your database to any point in time within your backup retention period.
+        Read Replicas: Create read replicas to offload read traffic from your primary database, improving performance and scalability.
+        Multi-AZ Deployments: Enhance availability by provisioning a standby instance in a different Availability Zone. 
+            RDS automatically fails over to the standby in case of an outage.
+    * Learn about different RDS database engines (MySQL, PostgreSQL, SQL Server, Oracle, etc.).
+    * Explore RDS features like automated backups, point-in-time recovery, and read replicas.
+        Containers as a Service (CaaS) is another deployment model where the cloud provider manages the underlying infrastructure for running containers,
+            while you manage the container images and application deployment. This model combines the flexibility of containers with the ease of managed services. 
+            AWS services like Amazon Elastic Container Service (Amazon ECS) and AWS Fargate provide CaaS capabilities.
+    Hands-on
+        Let's get some hands-on experience with RDS by launching an instance, connecting to it, and creating a read replica.
+        Launching an RDS Instance
+            In the RDS console, click "Create database".
+            Choose "Standard Create".
+            Select MySQL as the engine.
+            Choose a template (e.g., "Free tier").
+            Set a DB instance identifier (e.g., "my-mysql-db").
+            Choose a master username and a strong password.
+            Configure the remaining settings (instance size, storage, availability, etc.) based on your needs and free tier limits.
+            Click "Create database".
+        Connecting to the Database
+            Once the instance is available, get its endpoint (hostname) from the RDS console.
+            Use a MySQL client (like MySQL Workbench) to connect to the instance using the endpoint, master username, and password.
+        Creating a Read Replica
+            In the RDS console, select your MySQL instance.
+            Click "Actions" and then "Create read replica".
+            Configure the read replica settings (instance size, availability zone, etc.).
+            Click "Create read replica".
+
+3. Resources:
+    * Amazon RDS documentation.
+    * Amazon RDS FAQs.

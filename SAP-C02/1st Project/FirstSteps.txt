@@ -1,0 +1,186 @@
+Sección 1: Preparación y Configuración Inicial de la Cuenta de Administración
+
+Paso 1.1: Crear la Cuenta de Administración (Si no tienes una):
+
+Ve a la página de registro de AWS: https://aws.amazon.com/
+Haz clic en "Crear una cuenta de AWS".
+Sigue las instrucciones en pantalla. Necesitarás:
+Una dirección de correo electrónico única (que no se haya utilizado antes para otra cuenta de AWS). Importante: Usa una dirección de correo corporativa (si aplica) y no una dirección personal.
+Una tarjeta de crédito válida. (AWS no te cobrará inicialmente, pero la necesita para verificar tu identidad).
+Un número de teléfono.
+Elige un nombre para tu cuenta (por ejemplo, "TechCorp-Admin").
+Completa el proceso de verificación (teléfono y/o correo electrónico).
+Selecciona un plan de soporte (para un portafolio, el plan "Basic" gratuito es suficiente).
+¡Importante! Una vez creada la cuenta, inmediatamente habilita la autenticación multifactor (MFA) en la cuenta raíz. Esto es crítico para la seguridad. Ve a la consola de IAM, selecciona "Usuarios", luego el usuario "root", y en la pestaña "Credenciales de seguridad", activa MFA (puedes usar una aplicación de autenticación como Google Authenticator o Authy).
+Nunca, nunca, uses la cuenta raíz para tareas diarias.
+Paso 1.2: Crear un Usuario Administrador en IAM (en la Cuenta Raíz):
+
+Inicia sesión en la consola de AWS con la cuenta raíz (usando MFA).
+Ve al servicio IAM.
+En el panel de navegación, selecciona "Usuarios" y luego "Agregar usuario".
+Nombre de usuario: Por ejemplo, "Admin" o "TechCorpAdmin".
+Tipo de acceso: Selecciona "Acceso mediante programación" y "Acceso a la consola de administración de AWS".
+Contraseña de la consola: Elige "Contraseña personalizada" y establece una contraseña fuerte.
+Requerir restablecimiento de contraseña: Desmarca esta casilla (ya que es un administrador, no quieres que cambie la contraseña al iniciar sesión).
+Haz clic en "Siguiente: Permisos".
+En la sección "Establecer permisos", selecciona "Adjuntar directamente las políticas existentes".
+En la lista de políticas, busca y selecciona la política "AdministratorAccess". Advertencia: Esta política otorga acceso completo a todos los servicios de AWS. En un entorno de producción real, se recomienda crear políticas más granulares, pero para este proyecto de portafolio, "AdministratorAccess" simplifica la configuración.
+Haz clic en "Siguiente: Etiquetas" (opcional, puedes agregar etiquetas si lo deseas).
+Haz clic en "Siguiente: Revisar".
+Revisa la configuración y haz clic en "Crear usuario".
+Importante: Descarga el archivo CSV con las credenciales del usuario (clave de acceso y clave secreta). Guárdalas en un lugar muy seguro (un gestor de contraseñas es ideal). También anota la contraseña que estableciste.
+Cierra la sesión de la cuenta raíz.
+Paso 1.3: Iniciar Sesión con el Usuario Administrador y Habilitar MFA:
+
+Inicia sesión en la consola de AWS usando el nombre de usuario y la contraseña del usuario administrador que acabas de crear.
+Ve al servicio IAM.
+Selecciona "Usuarios" y luego el usuario administrador.
+En la pestaña "Credenciales de seguridad", activa MFA. De nuevo, usa una aplicación de autenticación.
+A partir de ahora, siempre usa el usuario administrador (con MFA) para todas las tareas en la cuenta de administración, nunca la cuenta raíz.
+Paso 1.4: Habilitar AWS Organizations:
+
+Inicia sesión en la consola de AWS con el usuario administrador de la cuenta de administración.
+Ve al servicio AWS Organizations.
+Si es la primera vez que usas Organizations, verás una página de bienvenida. Haz clic en "Crear organización".
+AWS Organizations se habilitará y tu cuenta de administración actual se convertirá en la cuenta maestra de la organización.
+Verás una estructura básica con una sola unidad organizativa (OU) llamada "Root".
+Paso 1.5: Configurar AWS Billing (Opcional, pero Recomendado):
+
+En la cuenta de administración, ve al servicio "Facturación y administración de costos".
+Configura un presupuesto (opcional, pero buena práctica). Ve a "Presupuestos" y crea un presupuesto mensual.
+Configura alertas de facturación (opcional, pero recomendado). Puedes configurar alertas para que te notifiquen si tu gasto supera un cierto umbral.
+Sección 2: Creación de la Estructura Organizacional (OUs y Cuentas)
+
+Paso 2.1: Crear las Unidades Organizativas (OUs):
+
+En la consola de AWS Organizations (en la cuenta de administración), ve a la pestaña "Cuentas de AWS".
+Haz clic en "Agregar cuenta de AWS". No crees las cuentas todavía. Primero vamos a crear la estructura de OUs.
+Haz clic en "Organizar cuentas".
+Verás la OU raíz ("Root"). Haz clic en ella.
+Haz clic en "Acciones" y selecciona "Crear unidad organizativa".
+Crea las siguientes OUs:
+OU-InfraestructuraCompartida (Dentro de la OU raíz)
+OU-Entornos (Dentro de la OU raíz)
+Dentro de OU-Entornos, crea las siguientes OUs:
+OU-Desarrollo
+OU-Pruebas
+OU-Produccion
+Paso 2.2: Crear las Cuentas de AWS:
+
+Ahora, vamos a crear las cuentas de AWS. Hay dos formas de hacerlo:
+Método 1 (Recomendado): Crear las cuentas desde AWS Organizations: Esto vincula automáticamente las cuentas a la organización y las coloca en la OU correcta.
+
+En la consola de AWS Organizations, ve a la OU donde quieres crear la cuenta (por ejemplo, OU-Desarrollo).
+Haz clic en "Agregar cuenta de AWS".
+Selecciona "Crear cuenta de AWS".
+Ingresa la siguiente información:
+Nombre de la cuenta: Un nombre descriptivo (por ejemplo, "TechCorp-Desarrollo").
+Correo electrónico: Una dirección de correo electrónico única para cada cuenta. Puedes usar un alias de correo (por ejemplo, techcorp+desarrollo@example.com). Importante: Estas direcciones de correo deben ser reales y debes tener acceso a ellas.
+Rol de IAM: Deja el nombre predeterminado (OrganizationAccountAccessRole). AWS Organizations creará este rol en la nueva cuenta para permitir que la cuenta de administración acceda a ella.
+Haz clic en "Crear".
+Repite este proceso para cada cuenta:
+OU-InfraestructuraCompartida:
+TechCorp-Red
+TechCorp-Seguridad
+OU-Entornos:
+TechCorp-Desarrollo
+TechCorp-Pruebas
+TechCorp-Produccion
+Método 2: Invitar Cuentas Existentes: Si ya tienes cuentas de AWS existentes que quieres incorporar a la organización, puedes invitarlas.  Nota: Este método requiere que aceptes la invitación desde la cuenta invitada.
+
+En la consola de AWS Organizations, ve a la OU donde quieres agregar la cuenta.
+Haz clic en "Agregar cuenta de AWS".
+Selecciona "Invitar cuenta de AWS existente".
+Ingresa el ID de la cuenta de AWS o la dirección de correo electrónico asociada a la cuenta.
+Haz clic en "Enviar invitación".
+Debes iniciar sesión en la cuenta invitada y aceptar la invitación desde la consola de AWS Organizations de esa cuenta.
+Paso 2.3: Verificar la Estructura:
+
+En la consola de AWS Organizations, asegúrate de que todas las cuentas estén en las OUs correctas. Deberías ver una estructura similar a la del diagrama de arquitectura.
+Sección 3: Configuración de la Cuenta de Red
+
+Paso 3.1: Iniciar Sesión en la Cuenta de Red:
+
+Utiliza AWS IAM Identity Center (SSO) - (Lo configuraremos en la Sección 5) para iniciar sesión en la cuenta TechCorp-Red. O, si aún no has configurado SSO, puedes crear un usuario IAM con permisos de administrador en la cuenta de Red (similar a como lo hiciste en la cuenta de administración) y usar ese usuario. Nunca uses la cuenta raíz.
+Paso 3.2: Crear la VPC:
+
+Ve al servicio VPC en la consola de AWS.
+Haz clic en "Crear VPC".
+Selecciona "VPC y más" (esto te permite configurar varios recursos de red a la vez).
+Configura la VPC:
+Nombre: TechCorp-Red-VPC
+Bloque CIDR IPv4: Elige un bloque CIDR que no se superponga con las VPCs que crearás en otras cuentas. Un ejemplo podría ser 10.0.0.0/16.
+Bloque CIDR IPv6: (Opcional) Puedes habilitar IPv6 si lo deseas.
+Tenencia: Déjalo como "Predeterminada".
+Configura las subredes:
+Crea al menos dos subredes públicas y dos subredes privadas, cada una en una zona de disponibilidad diferente para alta disponibilidad.
+Subred pública 1: TechCorp-Red-Public-Subnet-1 (por ejemplo, 10.0.1.0/24 en us-east-1a)
+Subred pública 2: TechCorp-Red-Public-Subnet-2 (por ejemplo, 10.0.2.0/24 en us-east-1b)
+Subred privada 1: TechCorp-Red-Private-Subnet-1 (por ejemplo, 10.0.3.0/24 en us-east-1a)
+Subred privada 2: TechCorp-Red-Private-Subnet-2 (por ejemplo, 10.0.4.0/24 en us-east-1b)
+Asegúrate de que las subredes no se superpongan.
+Configura el gateway de Internet:
+AWS creará automáticamente un gateway de Internet. Asígna un nombre descriptivo (por ejemplo, TechCorp-Red-IGW).
+Configura las tablas de rutas:
+AWS creará una tabla de rutas principal para la VPC.
+Crea una tabla de rutas pública:
+Nombre: TechCorp-Red-Public-RouteTable
+Asocia esta tabla de rutas a las subredes públicas.
+Agrega una ruta que dirija el tráfico 0.0.0.0/0 (todo el tráfico) al gateway de Internet.
+Crea una tabla de rutas privada:
+Nombre: TechCorp-Red-Private-RouteTable
+Asocia esta tabla de rutas a las subredes privadas. No agregues una ruta al gateway de Internet.
+Configura los NAT Gateways (para que las instancias en las subredes privadas puedan acceder a Internet):
+Crea un NAT Gateway en cada subred pública.
+Nombre: TechCorp-Red-NAT-GW-1, TechCorp-Red-NAT-GW-2
+Subred: Selecciona la subred pública correspondiente.
+Elastic IP Allocation ID: Haz clic en "Crear nueva EIP" para asignar una dirección IP elástica al NAT Gateway.
+En la tabla de rutas privada, agrega una ruta que dirija el tráfico 0.0.0.0/0 al NAT Gateway correspondiente (puedes tener una tabla de ruta privada por zona de disponibilidad, o una sola tabla de ruta privada para toda la VPC).
+Haz clic en "Crear VPC".
+Paso 3.3: Configurar Grupos de Seguridad:
+
+Crea grupos de seguridad para controlar el tráfico entrante y saliente de tus recursos.
+Ejemplo: Un grupo de seguridad para servidores web que permita el tráfico entrante en los puertos 80 (HTTP) y 443 (HTTPS).
+Ejemplo: Un grupo de seguridad para bases de datos que permita el tráfico entrante en el puerto de la base de datos (por ejemplo, 3306 para MySQL) solo desde los servidores web.
+Siempre aplica el principio de mínimo privilegio: solo permite el tráfico estrictamente necesario.
+Paso 3.4: Configurar Transit Gateway (Recomendado) o VPC Peering:
+
+Transit Gateway (Recomendado para arquitecturas más complejas):
+
+En la consola de VPC, ve a "Transit Gateways".
+Haz clic en "Crear Transit Gateway".
+Nombre: TechCorp-TGW
+Descripción: (Opcional)
+Amazon side Autonomous System Number (ASN): Deja el valor predeterminado.
+DNS support: Habilítalo.
+VPN ECMP support: (Opcional) Habilítalo si necesitas balanceo de carga entre múltiples conexiones VPN.
+Default route table association: Deshabilítalo (configuraremos las tablas de rutas manualmente).
+Default route table propagation: Deshabilítalo.
+Auto accept shared attachments: Deshabilítalo. Esto es importante por seguridad: no quieres que otras cuentas puedan conectarse automáticamente a tu Transit Gateway.
+Haz clic en "Crear Transit Gateway".
+Después de crear el Transit Gateway, ve a "Transit Gateway Attachments".
+Haz clic en "Crear Transit Gateway Attachment".
+Transit Gateway ID: Selecciona el Transit Gateway que acabas de crear.
+Attachment type: Selecciona "VPC".
+Attachment name: Por ejemplo, TechCorp-Red-VPC-Attachment.
+VPC ID: Selecciona la VPC de la cuenta de Red (TechCorp-Red-VPC).
+Subnet IDs: Selecciona las subredes privadas de la VPC de Red.
+Haz clic en "Crear Transit Gateway Attachment".
+Ve a "Transit Gateway Route Tables".
+AWS creará una tabla de rutas predeterminada para el Transit Gateway. Puedes usarla o crear una nueva.
+Asocia la VPC attachment que acabas de crear a la tabla de rutas del Transit Gateway.
+Agrega rutas a la tabla de rutas del Transit Gateway para dirigir el tráfico a las otras VPCs (cuando las conectes). Por ejemplo, si la VPC de Desarrollo tiene el CIDR 10.1.0.0/16, agregarías una ruta con destino 10.1.0.0/16 y el attachment de la VPC de Desarrollo como destino.
+Repite este proceso (crear attachments y configurar rutas) para conectar las VPCs de las otras cuentas (Desarrollo, Pruebas, Producción) al Transit Gateway. Importante: Cada vez que crees un attachment desde otra cuenta, deberás aceptar la solicitud de attachment en la cuenta de Red.
+VPC Peering (Para arquitecturas más simples):
+
+En la consola de VPC, ve a "Conexiones de emparejamiento".
+Haz clic en "Crear conexión de emparejamiento".
+Solicitante de VPC: Selecciona la VPC de la cuenta de Red (TechCorp-Red-VPC).
+Seleccione otra VPC con la que establecer la conexión de emparejamiento:
+Mi cuenta: Si la otra VPC está en la misma cuenta (no es el caso en este proyecto).
+Otra cuenta: Selecciona esta opción.
+ID de cuenta: Ingresa el ID de la cuenta de AWS de la otra VPC (por ejemplo, la cuenta de Desarrollo).
+VPC (Aceptador): Selecciona la VPC de la otra cuenta (por ejemplo, TechCorp-Desarrollo-VPC).
+Haz clic en "Crear conexión de emparejamiento".
+La conexión de peering se creará en estado "Pendiente de aceptación".
+Inicia sesión en la cuenta de AWS de la otra VPC (por ejemplo, la cuenta de Desarrollo).
